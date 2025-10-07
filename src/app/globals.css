@@ -3,13 +3,72 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* ✅ Primary color scale (based on #0B3C81 as 600) */
+  --color-primary-50: #e7e9ff;
+  --color-primary-100: #c2c6ff;
+  --color-primary-200: #9da3ff;
+  --color-primary-300: #6f77ff;
+  --color-primary-400: #4049f5;
+  --color-primary-500: #000ac3; /* base */
+  --color-primary-600: #0009a8;
+  --color-primary-700: #00088c;
+  --color-primary-800: #000670;
+  --color-primary-900: #000555;
+  --color-primary-950: #00043d;
+  --color-primary-custom: #0009a8;
+
+  /* ✅ Grey color scale (based on #71717A as 600) */
+  --color-grey-50: #f9fafb;
+  --color-grey-100: #f3f4f6;
+  --color-grey-200: #e5e7eb;
+  --color-grey-300: #d4d4d8;
+  --color-grey-400: #9ca3af;
+  --color-grey-500: #6b7280;
+  --color-grey-600: #71717a;
+  --color-grey-700: #52525b;
+  --color-grey-800: #3f3f46;
+  --color-grey-900: #27272a;
+  --color-grey-950: #18181b;
+  --color-grey-custom: #2c3039;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  /* ✅ Map primary scale to theme */
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+  --color-primary-950: var(--color-primary-950);
+  --color-primary-custom: var(--color-primary-custom);
+
+  /* ✅ Map grey scale to theme */
+  --color-grey-50: var(--color-grey-50);
+  --color-grey-100: var(--color-grey-100);
+  --color-grey-200: var(--color-grey-200);
+  --color-grey-300: var(--color-grey-300);
+  --color-grey-400: var(--color-grey-400);
+  --color-grey-500: var(--color-grey-500);
+  --color-grey-600: var(--color-grey-600);
+  --color-grey-700: var(--color-grey-700);
+  --color-grey-800: var(--color-grey-800);
+  --color-grey-900: var(--color-grey-900);
+  --color-grey-950: var(--color-grey-950);
+  --color-grey-custom: var(--color-grey-custom);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-oswald: var(--font-oswald);
+  --font-clash: var(--font-clash-grotesk);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +78,13 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
+  /* Disabled dark mode theme feature */
+  /* background: var(--background); */
+  /* color: var(--foreground); */
   font-family: Arial, Helvetica, sans-serif;
 }
