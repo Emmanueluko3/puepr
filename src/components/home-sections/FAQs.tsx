@@ -8,32 +8,37 @@ const faqs = [
     id: 1,
     question: "What industries do you serve?",
     answer:
-      "We work with businesses across various industries globally, with specialized expertise in Serbia and Montenegro business registration, project management, automation, and operational growth.",
+      "We partner with businesses across a wide range of industries worldwide. Our specialized expertise includes business registration in Serbia & Montenegro, as well as project management, automation, and operational growth for companies looking to scale smarter.",
   },
   {
     id: 2,
     question: "How do you tailor solutions for my business?",
     answer:
-      "We begin with a comprehensive discovery phase to understand your unique challenges, goals, and market position. Our team then crafts customized strategies that align with your specific objectives and industry requirements.",
+      "We begin by understanding your goals, challenges, and industry context. Using this insight, we design strategies and workflows that align with your unique needs. This way, each solution is actionable, growth-ready, and built to deliver measurable impact.",
   },
   {
     id: 3,
-    question:
-      "Can you help with business registration in Serbia and Montenegro?",
+    question: "Can you help with business registration in Serbia & Montenegro?",
     answer:
-      "Yes, we specialize in business registration services for Serbia and Montenegro. We handle all legal requirements, documentation, and regulatory compliance to ensure a smooth registration process for your business.",
+      "Yes. We assist businesses with the full registration process in Serbia and Montenegro — from preparing documentation to navigating local requirements. Our team ensures that your setup is compliant, efficient, and aligned with your long-term growth goals.",
   },
   {
     id: 4,
     question: "What is your approach to project management and automation?",
     answer:
-      "We combine agile methodologies with cutting-edge automation tools to streamline your operations. Our approach focuses on efficiency, scalability, and measurable results while maintaining flexibility to adapt to your evolving needs.",
+      "At PUEPR, we combine proven project management frameworks with smart automation to streamline workflows and eliminate inefficiencies. This approach ensures every project is delivered with clarity, consistency, and lasting results, helping your business grow smarter.",
   },
   {
     id: 5,
+    question: "Can you work with startups as well as established businesses?",
+    answer:
+      "We work with clients of all sizes, including startups, SMEs, large enterprises, entrepreneurs, and solopreneurs — tailoring solutions to their stage of growth and specific business objectives.",
+  },
+  {
+    id: 6,
     question: "How do I schedule a consultation?",
     answer:
-      'You can schedule a consultation by clicking the "Get Started Today" button on our website, or by contacting us directly through our contact form. We typically respond within 24 hours to arrange a convenient time for your consultation.',
+      "Simply click the “Book your consultation” button, select a time through our Calendly link, and you’ll be scheduled for a 1:1 session with our founder to discuss your business goals.",
   },
 ];
 
