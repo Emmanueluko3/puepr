@@ -57,17 +57,16 @@ export default function Hero() {
           data-aos="fade-up"
           data-aos-delay="40"
         >
-          Grow Smarter, Not Harder with PUEPR Beyond Borders
+          Grow smarter, Not harder with PUEPR beyond borders.
         </h2>
         <p
           data-aos="fade-up"
           data-aos-delay="50"
           className="text-base md:text-lg text-center text-white font-medium md:max-w-3/5 font-clash"
         >
-          Empowering businesses worldwide with agile solutions in project
-          management, web development, automation, lead generation, admin
-          support, and business registration — helping you scale with
-          confidence.
+          Success starts with the right path. We design strategies guided by
+          analysis and personal insight. With PUEPR, your business works smarter
+          and grows globally.
         </p>
         <div
           className="flex items-center gap-4"
@@ -82,7 +81,7 @@ export default function Hero() {
             data-aos="fade-right"
             data-aos-delay="100"
           >
-            Book Free Consultation
+            Book your free consultation
           </Button>
           <Button
             onClick={goToPage}
@@ -92,7 +91,7 @@ export default function Hero() {
             data-aos="fade-left"
             data-aos-delay="100"
           >
-            Explore Our Services
+            Explore our services
           </Button>
         </div>
       </Container>
