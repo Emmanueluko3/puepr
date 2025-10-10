@@ -21,14 +21,14 @@ const services = [
   },
   {
     icon: Briefcase,
-    title: "Business Development",
+    title: "Web Development",
     description:
-      "Unlock new opportunities, optimize operations, and grow your business locally and globally.",
+      "We design and develop custom websites that are visually appealing, functional, and tailored to your business objectives. From corporate websites to professional portfolios, our web solutions enhance brand credibility and user engagement.",
     hasProfileBadge: false,
   },
   {
     icon: Zap,
-    title: "Business Automation",
+    title: "Automation Solutions",
     description:
       "Implement smart systems and processes to save time, reduce errors, and boost productivity.",
     hasProfileBadge: false,
