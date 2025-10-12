@@ -5,13 +5,6 @@ import Image from "next/image";
 import { Button } from "../ui/Button";
 import { ArrowRight } from "lucide-react";
 
-const spanClassMap: Record<string, string> = {
-  "1": "lg:col-span-1",
-  "2": "lg:col-span-2",
-  "5": "lg:col-span-5",
-  "7": "lg:col-span-7",
-};
-
 const services = [
   {
     title: "True Partnership",

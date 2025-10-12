@@ -1,7 +1,6 @@
 "use client";
 
 import { Gauge, Network, SlidersHorizontal, CloudUpload } from "lucide-react";
-import Image from "next/image";
 
 export function WhyChooseUsSection() {
   const features = [

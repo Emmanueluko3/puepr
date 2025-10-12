@@ -6,24 +6,14 @@ import {
   Facebook,
   X as TwitterX,
   Linkedin,
-  Mail,
   Youtube,
   Tiktok,
   Instagram,
 } from "iconoir-react";
 import Image from "next/image";
 import Link from "next/link";
-import Input from "../ui/Input";
-import { Button } from "../ui/Button";
-import { useRouter } from "next/navigation";
 
 export default function Footer() {
-  const router = useRouter();
-
-  const goToPage = () => {
-    router.push("/contact");
-  };
-
   const currentYear = new Date().getFullYear();
 
   const footerSections = [
