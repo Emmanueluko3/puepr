@@ -96,6 +96,7 @@ export default function Header() {
 
   const isDarkSection =
     activeStyles.bg.includes("primary-300") ||
+    activeStyles.bg.includes("primary-500") ||
     activeStyles.bg.includes("primary-600") ||
     activeStyles.bg.includes("grey-custom") ||
     activeStyles.bg.includes("primary-custom") ||
@@ -116,7 +117,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/">
             <Image
-              src={isDarkSection ? SITE_CONFIG.logo : SITE_CONFIG.logoDark}
+              src={isDarkSection ? SITE_CONFIG.logo : SITE_CONFIG.logo}
               width={500}
               height={500}
               className="h-10 w-44 object-contain"

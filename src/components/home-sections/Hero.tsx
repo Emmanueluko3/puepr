@@ -1,17 +1,13 @@
 "use client";
 
 import Image from "next/image";
-// import Image from "next/image";
 import { Button } from "../ui/Button";
 import { Container } from "../ui/Container";
 import { useRouter } from "next/navigation";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export default function Hero() {
   const router = useRouter();
-
-  const goToPage = () => {
-    router.push("/contact");
-  };
 
   return (
     <section
@@ -19,7 +15,7 @@ export default function Hero() {
       data-bg="bg-transparent"
       data-text="text-white"
       data-secondary="text-white"
-      className="relative h-screen w-full overflow-hidden flex justify-center items-center"
+      className="relative min-h-screen w-full overflow-hidden flex justify-center items-center"
     >
       {/* Background Image */}
       <Image
@@ -44,16 +40,16 @@ export default function Hero() {
       </video>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/20 z-10" />
+      <div className="absolute inset-0 bg-black/40 z-10" />
 
       {/* Content */}
       <Container
         data-aos="fade-up"
         data-aos-duration="300"
-        className="relative z-20 flex items-center justify-center flex-col h-full gap-8 lg:py-16 py-14 text-white"
+        className="relative z-20 flex flex-col items-center justify-center h-full gap-6 px-4 sm:px-6 md:px-10 text-white text-center"
       >
         <h2
-          className="text-5xl md:text-6xl lg:text-8xl font-bold leading-[114.99999999999999%] mb-6 lg:mb-0 font-oswald tracking-tighter text-center"
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold leading-tight mb-4 font-oswald tracking-tighter"
           data-aos="fade-up"
           data-aos-delay="40"
         >
@@ -62,32 +58,32 @@ export default function Hero() {
         <p
           data-aos="fade-up"
           data-aos-delay="50"
-          className="text-base md:text-lg text-center text-white font-medium md:max-w-3/5 font-clash"
+          className="text-sm sm:text-base md:text-lg text-white font-medium max-w-[90%] sm:max-w-2xl md:max-w-3xl font-clash"
         >
           Success starts with the right path. We design strategies guided by
           analysis and personal insight. With PUEPR, your business works smarter
           and grows globally.
         </p>
         <div
-          className="flex items-center gap-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-4"
           data-aos="fade-up"
           data-aos-delay="70"
         >
           <Button
-            onClick={goToPage}
+            onClick={() => router.push(SITE_CONFIG.calendlyUrl)}
             variant="primary"
             size="md"
-            className="px-6 py-2.5 font-medium"
+            className="w-full sm:w-auto px-6 py-2.5 font-medium"
             data-aos="fade-right"
             data-aos-delay="100"
           >
             Book your free consultation
           </Button>
           <Button
-            onClick={goToPage}
+            onClick={() => router.push("/contact")}
             variant="secondary"
             size="md"
-            className="px-6 py-2.5 font-medium"
+            className="w-full sm:w-auto px-6 py-2.5 font-medium"
             data-aos="fade-left"
             data-aos-delay="100"
           >

@@ -26,25 +26,25 @@ export default function Reviews() {
   }
   const reviews: Reviews[] = [
     {
-      name: "Jennifer Adams, CEO",
-      image: "/images/avater.jpg",
-      occupation: "Meridian Financial Services",
+      name: "Gloria A.",
+      image: "/images/Gloria.JPG",
+      occupation: "Product/Digital marketer",
       comment:
-        "PUEPR provided exceptional guidance that reshaped how our organization approaches policy and ethics. Their innovative strategies strengthened our operations and overall impact.",
+        "I contracted PUEPR  to help with both personal assistance and administrative tasks for my brand. They exhibited a high level of professionalism and competence. My assigned assistant particularly helped to organise and manage my schedule, increasing my productivity very much and helped in ensuring I managed my time well. The entire team  is great with research, meeting note taking and reports, as well creative presentation slides. I highly recommend PUEPR!",
     },
     {
-      name: "Michael Chen, General Counsel",
-      image: "/images/avater.jpg",
-      occupation: "Northstar Manufacturing Corp.",
+      name: "Dominique",
+      image: "/images/Dominique.JPG",
+      occupation: "Founder - Dominique Ceara",
       comment:
-        "The PUEPR team brought a refreshing level of professionalism and expertise. Their support helped us establish stronger compliance systems and boost team accountability across all departments.",
+        "I just want to say how much I appreciate this amazing. They are not only reliable and efficient - they think with me. That kind of presence and initiative is rare. I can feel that PUEPR genuinely cares about the work and wants to contribute to the bigger picture. Their support has been such a gift, and I deeply value the way the founder and her team brings calm, clarity, and dedication into every task. She's doing a beautiful job - and it doesn't go unnoticed",
     },
     {
-      name: "Lisa Rodriguez, VP of Operations",
-      image: "/images/avater.jpg",
-      occupation: "Beacon Healthcare Group",
+      name: "Milan Petrović",
+      image: "/images/Milan.JPG",
+      occupation: "COO - Nexus Solutions",
       comment:
-        "Working with PUEPR has been transformative. Their tailored approach to policy improvement and ethical standards helped us achieve measurable progress in a short time.",
+        "PUEPR is the perfect partner because they get the big picture. They combined their international experience with a deep understanding of our local market. It felt like having a global expert sitting right here with us. Their strategy had an immediate, positive impact on our business.",
     },
   ];
 
@@ -105,12 +105,12 @@ export default function Reviews() {
           <div className="flex justify-center ">
             <div className="rounded-full border border-gray-200 bg-gray-100 px-4 py-2 w-fit">
               <span className="bg-gradient-to-b from-[#FFA100] to-[#FF000D] bg-clip-text text-transparent text-sm w-fit">
-                HOW WE WORK
+                TESTIMONIAL
               </span>
             </div>
           </div>
           <h2 className="w-full text-xl md:text-3xl md:text-[80px] text-black font-bold  font-oswald tracking-tighter text-center">
-            Trusted by Businesses That Grow Smarter
+            PUEPR is trusted by businesses that Grow smarter
           </h2>
           <p className="font-clash text-base md:text-lg text-black lg:w-5/12 text-center">
             See how companies worldwide have achieved measurable growth and

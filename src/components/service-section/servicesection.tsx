@@ -17,7 +17,7 @@ const sections = [
     dataBg: "bg-white",
     dataText: "text-grey-950",
     dataSecondary: "text-grey-950",
-    title: "Our Core Services",
+    title: "CORE SERVICES",
     description:
       "At PUEPR, we provide a comprehensive suite of services designed to improve business performance, digital presence, and operational efficiency.",
     services: [
