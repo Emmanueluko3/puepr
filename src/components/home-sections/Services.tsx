@@ -12,26 +12,31 @@ const spanClassMap: Record<string, string> = {
   "7": "lg:col-span-7",
 };
 
-const services = [
+export const services = [
   {
-    title: "True Partnership",
-    content:
-      "We work hand-in-hand with your team, moving beyond consultancy to co-create success.",
+    title: "Globally aligned expertise",
+    description:
+      "We deliver consulting solutions in digital transformation, automation, and business operations that align with global growth trends and evolving industry demands.",
   },
   {
-    title: "Borderless Growth",
-    content:
-      "Strong roots in Serbia & Montenegro, paired with strategies that scale across borders.",
+    title: "Integrated solutions, One partner",
+    description:
+      "You get full-service support from our highly impactful and specialized team rather than hiring multiple vendors. One partnership, complete coordination, maximum efficiency.",
   },
   {
-    title: "Influence That Lasts",
-    content:
-      "From media to stakeholders, we shape narratives that endure, build trust, and drive lasting influence.",
+    title: "Built for global business",
+    description:
+      "Our cloud-based delivery model, GDPR compliance, and modern collaboration tools position us to serve international clients with the same excellence we deliver locally.",
   },
   {
-    title: "Tailored to You",
-    content:
-      "Every solution is carefully customized to fit your market, reflect your story, and achieve your goals with precision.",
+    title: "Collaborative partnership / Direct delivery",
+    description:
+      "We work hand-in-hand with your team, moving beyond strategy to seamless execution, delivering tangible outcomes and lasting business growth.",
+  },
+  {
+    title: "Pricing benchmarks",
+    description:
+      "Our pricing stays competitive with Eastern European standards while delivering clear ROI on every project.",
   },
 ];
 
@@ -46,7 +51,7 @@ export default function Features() {
       data-text="text-gray-900"
       data-secondary="text-gray-900"
     >
-      <Container className="flex flex-col md:flex-row items-end gap-6">
+      <Container className="flex flex-col md:flex-row items-end md:items-start gap-6">
         <div
           className="flex flex-col w-full pr-10 lg:gap-8 mb-14 lg:mb-0"
           data-aos="fade-right"
@@ -59,7 +64,7 @@ export default function Features() {
           </div>
 
           <h2 className="w-full text-3xl text-gray-950 font-bold leading-[115%] mb-6 lg:mb-0 font-oswald tracking-tighter">
-            Empowering Businesses With Smarter, Tailored Solutions
+            Smarter strategies, Lasting growth
           </h2>
           <Image
             src="/images/business.jpg"
@@ -71,12 +76,6 @@ export default function Features() {
         </div>
 
         <div className="w-full flex flex-col gap-8">
-          <p className="font-clash font-normal text-base md:text-lg text-grey-600 w-full">
-            With years of expertise and a global perspective, PUEPR helps
-            companies unlock efficiency, scale operations, and expand into new
-            markets. Our agile, innovative approach ensures every client gets
-            strategies that drive measurable growth and lasting results.
-          </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {services.map((card, idx) => (
               <div
@@ -90,7 +89,7 @@ export default function Features() {
                   {card.title}
                 </h3>
                 <p className="text-grey-600 text-sm font-clash">
-                  {card.content}
+                  {card.description}
                 </p>
               </div>
             ))}
@@ -101,7 +100,7 @@ export default function Features() {
             data-aos-delay="100"
             className="flex items-center justify-center gap-3 w-fit"
           >
-            Discover More About Us <ArrowRight />
+            Get Started <ArrowRight />
           </Button>
         </div>
       </Container>

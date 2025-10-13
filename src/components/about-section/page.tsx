@@ -26,9 +26,11 @@ export default function HomePage() {
             className="flex items-center lg:items-end lg:pt-10"
           >
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              We combine local expertise and global insights to deliver
-              innovative, tailored solutions that help businesses thrive in
-              Serbia, Montenegro, and beyond.
+              We combine local knowledge with international experience to
+              deliver strategies that help your business succeed in any market.
+              Our team adapts quickly to changing business needs, using modern
+              tools and creative approaches to implement solutions that drive
+              real impact.
             </p>
           </div>
         </div>
@@ -95,8 +97,9 @@ export default function HomePage() {
                     Vision
                   </h2>
                   <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                    To be recognized globally for delivering innovative,
-                    tailored business solutions that help clients thrive.
+                    ‎Our vision is to be globally recognized for delivering
+                    innovative, tailored business solutions that help clients
+                    thrive.
                   </p>
                 </div>
               </div>

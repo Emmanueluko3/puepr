@@ -61,10 +61,9 @@ export default function Hero() {
           data-aos-delay="50"
           className="text-base md:text-lg text-start text-white font-medium max-w-3/2 md:max-w-3/5 font-clash"
         >
-          Discover our full range of core and specialized services, crafted to
-          help businesses streamline operations, unlock new opportunities, and
-          achieve sustainable growth—whether you’re expanding locally in Serbia
-          and Montenegro or scaling globally.
+          At PUEPR, we provide a comprehensive suite of services designed to
+          improve business performance, digital presence, and operational
+          efficiency.
         </p>
         <div
           className="flex items-center gap-4"

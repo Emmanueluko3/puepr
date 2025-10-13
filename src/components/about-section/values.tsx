@@ -12,26 +12,26 @@ const spanClassMap: Record<string, string> = {
   "7": "lg:col-span-7",
 };
 
-const services = [
+export const services = [
   {
-    title: "True Partnership",
+    title: "Local Insight, Global Perspective",
     content:
-      "We work hand-in-hand with your team, moving beyond consultancy to co-create success.",
+      "We combine local knowledge with international experience to deliver strategies that help your business succeed in any market.",
   },
   {
-    title: "Borderless Growth",
+    title: "Agile and Adaptive",
     content:
-      "Strong roots in Serbia & Montenegro, paired with strategies that scale across borders.",
+      "Our team adapts quickly to changing business needs, using modern tools and creative approaches to implement solutions that drive real impact.",
   },
   {
-    title: "Influence That Lasts",
+    title: "Transparent Collaboration",
     content:
-      "From media to stakeholders, we shape narratives that endure, build trust, and drive lasting influence.",
+      "Our communication style is open and clear at every stage, ensuring you always know what's happening and can trust our results.",
   },
   {
-    title: "Tailored to You",
+    title: "Results That Matter",
     content:
-      "Every solution is carefully customized to fit your market, reflect your story, and achieve your goals with precision.",
+      "At PUEPR, our solutions are designed to generate measurable growth and tangible outcomes, helping your business thrive beyond simple reports and metrics.",
   },
 ];
 
