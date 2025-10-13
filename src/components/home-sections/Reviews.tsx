@@ -87,13 +87,13 @@ export default function Reviews() {
 
   return (
     <section
-      className="py-16 lg:pt-16 bg-white text-white"
+      className="py-16 lg:pt-16 bg-white text-gray-950"
       data-aos="fade-up"
       data-aos-duration="1000"
       id="reviews"
-      data-bg="bg-grey-custom"
-      data-text="text-white"
-      data-secondary="text-white"
+      data-bg="bg-white"
+      data-text="text-gray-950"
+      data-secondary="text-gray-950"
     >
       <Container>
         {/* Heading Section */}
