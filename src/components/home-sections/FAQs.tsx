@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 const faqs = [
@@ -20,7 +20,7 @@ const faqs = [
     id: 3,
     question: "Can you help with business registration in Serbia & Montenegro?",
     answer:
-      "Yes. We assist businesses with the full registration process in Serbia and Montenegro — from preparing documentation to navigating local requirements. Our team ensures that your setup is compliant, efficient, and aligned with your long-term growth goals.",
+      "Yes. We assist businesses with the full registration process in Serbia and                  Montenegro, from preparing documentation to navigating local requirements. Our team ensures that your setup is compliant, efficient, and aligned with your long-term growth goals.",
   },
   {
     id: 4,
@@ -32,7 +32,7 @@ const faqs = [
     id: 5,
     question: "Can you work with startups as well as established businesses?",
     answer:
-      "We work with clients of all sizes, including startups, SMEs, large enterprises, entrepreneurs, and solopreneurs — tailoring solutions to their stage of growth and specific business objectives.",
+      "We work with clients of all sizes, including startups, SMEs, large enterprises, entrepreneurs, and solopreneurs, tailoring solutions to their stage of growth.",
   },
   {
     id: 6,

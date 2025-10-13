@@ -4,38 +4,34 @@ import { Container } from "@/components/ui/Container";
 import Image from "next/image";
 import { Button } from "../ui/Button";
 import { ArrowRight } from "lucide-react";
-
-const spanClassMap: Record<string, string> = {
-  "1": "lg:col-span-1",
-  "2": "lg:col-span-2",
-  "5": "lg:col-span-5",
-  "7": "lg:col-span-7",
-};
+import { useRouter } from "next/navigation";
 
 const services = [
   {
-    title: "True Partnership",
+    title: "Globally aligned expertise",
     content:
-      "We work hand-in-hand with your team, moving beyond consultancy to co-create success.",
+      "We deliver consulting solutions in digital transformation, automation, and business operations that align with global growth trends and evolving industry demands.",
   },
   {
-    title: "Borderless Growth",
+    title: "Integrated solutions, One partner",
     content:
-      "Strong roots in Serbia & Montenegro, paired with strategies that scale across borders.",
+      "You get full-service support from our highly impactful and specialized team rather than hiring multiple vendors. One partnership, complete coordination, maximum efficiency.",
   },
   {
-    title: "Influence That Lasts",
+    title: "Built for global business",
     content:
-      "From media to stakeholders, we shape narratives that endure, build trust, and drive lasting influence.",
+      "Our cloud-based delivery model, GDPR compliance, and modern collaboration tools position us to serve international clients with the same excellence we deliver locally.",
   },
   {
-    title: "Tailored to You",
+    title: "Collaborative partnership / Direct delivery",
     content:
-      "Every solution is carefully customized to fit your market, reflect your story, and achieve your goals with precision.",
+      "We work hand-in-hand with your team, moving beyond strategy to seamless execution, delivering tangible outcomes and lasting business growth.",
   },
 ];
 
 export default function Features() {
+  const router = useRouter();
+
   return (
     <section
       className="py-16 lg:py-32 bg-white"
@@ -47,39 +43,42 @@ export default function Features() {
       data-secondary="text-gray-900"
     >
       <Container className="flex flex-col md:flex-row items-end gap-6">
-        <div
-          className="flex flex-col w-full pr-10 lg:gap-8 mb-14 lg:mb-0"
+        <article
+          className="flex flex-col w-full pr-0 md:pr-10 lg:gap-8 mb-10 lg:mb-0"
           data-aos="fade-right"
           data-aos-delay="100"
         >
-          <div className="rounded-full border border-gray-200 bg-gray-100 px-4 py-2 w-fit">
-            <span className="bg-gradient-to-b from-[#FFA100] to-[#FF000D] bg-clip-text text-transparent text-xs w-fit">
-              Why Businesses Around the World Choose PUEPR
+          <span className="rounded-full border border-gray-200 bg-gray-100 px-4 py-2 w-fit">
+            <span className="bg-gradient-to-b from-[#FFA100] to-[#FF000D] bg-clip-text text-transparent text-xs sm:text-sm">
+              Why businesses around the world choose PUEPR?
             </span>
-          </div>
+          </span>
 
-          <h2 className="w-full text-3xl text-gray-950 font-bold leading-[115%] mb-6 lg:mb-0 font-oswald tracking-tighter">
-            Empowering Businesses With Smarter, Tailored Solutions
+          <h2 className="w-full text-2xl sm:text-3xl text-gray-950 font-bold leading-[115%] mb-6 lg:mb-0 font-oswald tracking-tighter">
+            Smarter strategies, Lasting growth
           </h2>
+
           <Image
             src="/images/business.jpg"
-            alt=""
+            alt="Business growth"
             width={500}
             height={300}
-            className="w-full h-full object-cover rounded-2xl"
+            className="w-full h-auto object-cover rounded-2xl"
           />
-        </div>
+        </article>
 
-        <div className="w-full flex flex-col gap-8">
-          <p className="font-clash font-normal text-base md:text-lg text-grey-600 w-full">
-            With years of expertise and a global perspective, PUEPR helps
-            companies unlock efficiency, scale operations, and expand into new
-            markets. Our agile, innovative approach ensures every client gets
-            strategies that drive measurable growth and lasting results.
+        <article className="w-full flex flex-col gap-8">
+          <p className="font-clash font-normal text-base md:text-lg text-grey-600 w-full leading-relaxed">
+            PUEPR is the integrated global partner for digital and operational
+            transformation. We use an agile approach and collaborative
+            partnership to deliver seamless execution, maximum efficiency, and
+            clear ROI, ensuring your business achieves smarter strategies and
+            lasting growth.
           </p>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {services.map((card, idx) => (
-              <div
+              <li
                 key={idx}
                 className="bg-grey-100 rounded-2xl border border-gray-100 p-6"
                 data-aos="zoom-in-up"
@@ -92,18 +91,21 @@ export default function Features() {
                 <p className="text-grey-600 text-sm font-clash">
                   {card.content}
                 </p>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
+
           <Button
             variant="primary"
             data-aos="zoom-in-right"
             data-aos-delay="100"
-            className="flex items-center justify-center gap-3 w-fit"
+            className="flex items-center justify-center gap-3 w-fit text-sm sm:text-base"
+            onClick={() => router.push("/about")}
           >
-            Discover More About Us <ArrowRight />
+            Discover more about us
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </Button>
-        </div>
+        </article>
       </Container>
     </section>
   );

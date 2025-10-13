@@ -1,17 +1,11 @@
 "use client";
 
 import Image from "next/image";
-// import Image from "next/image";
-import { Button } from "../ui/Button";
 import { Container } from "../ui/Container";
 import { useRouter } from "next/navigation";
 
 export default function Hero() {
   const router = useRouter();
-
-  const goToPage = () => {
-    router.push("/contact");
-  };
 
   return (
     <section
@@ -37,24 +31,14 @@ export default function Hero() {
       <Container
         data-aos="fade-up"
         data-aos-duration="300"
-        className="relative z-20  pt-6 flex items-start justify-start flex-col h-full gap-8 lg:py-16 py-14 text-white"
+        className="relative z-20  pt-6 flex justify-center flex-col h-full gap-8 lg:py-16 py-14 text-white"
       >
-        <Button
-          onClick={goToPage}
-          variant="secondary"
-          size="md"
-          className="px-6 mt-[5rem] py-2.5 font-medium"
-          data-aos="fade-left"
-          data-aos-delay="100"
-        >
-          Services
-        </Button>
         <h2
           className="text-5xl md:text-6xl lg:text-8xl font-bold leading-[114.99999999999999%] mb-6 lg:mb-0 font-oswald tracking-tighter text-start"
           data-aos="fade-up"
           data-aos-delay="40"
         >
-          Solutions That Drive Growth, Efficiency, and Success
+          Solutions that drive growth, efficiency, and success.
         </h2>
         <p
           data-aos="fade-up"
@@ -63,7 +47,7 @@ export default function Hero() {
         >
           Discover our full range of core and specialized services, crafted to
           help businesses streamline operations, unlock new opportunities, and
-          achieve sustainable growth—whether you’re expanding locally in Serbia
+          achieve sustainable growth, whether you’re expanding locally in Serbia
           and Montenegro or scaling globally.
         </p>
         <div

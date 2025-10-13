@@ -26,26 +26,25 @@ export default function Reviews() {
   }
   const reviews: Reviews[] = [
     {
-      name: "Jennifer Adams, CEO",
-      image: "/images/avater.jpg",
-      occupation: "Meridian Financial Services",
+      name: "Gloria A.",
+      image: "/images/Gloria.JPG",
+      occupation: "Product/Digital marketer",
       comment:
-        "Ethics Consulting Partners helped us build a compliance framework that actually works in the real world. Their practical approach saved us from potential regulatory issues and improved our company culture significantly.",
-    },
-
-    {
-      name: "Michael Chen, General Counsel",
-      image: "/images/avater.jpg",
-      occupation: "Northstar Manufacturing Corp.",
-      comment:
-        "The team's expertise in ethics training transformed how our employees handle difficult decisions. We've seen a 35% increase in ethics reporting and much stronger stakeholder confidence since working with them.",
+        "I contracted PUEPR  to help with both personal assistance and administrative tasks for my brand. They exhibited a high level of professionalism and competence. My assigned assistant particularly helped to organise and manage my schedule, increasing my productivity very much and helped in ensuring I managed my time well. The entire team  is great with research, meeting note taking and reports, as well creative presentation slides. I highly recommend PUEPR!",
     },
     {
-      name: "Lisa Rodriguez, VP of Operations",
-      image: "/images/avater.jpg",
-      occupation: "Beacon Healthcare Group",
+      name: "Dominique",
+      image: "/images/Dominique.JPG",
+      occupation: "Founder - Dominique Ceara",
       comment:
-        "Professional, knowledgeable, and results-driven. Ethics Consulting Partners delivered customized solutions that fit our industry needs perfectly. Our audit scores improved dramatically within six months.",
+        "I just want to say how much I appreciate this amazing. They are not only reliable and efficient - they think with me. That kind of presence and initiative is rare. I can feel that PUEPR genuinely cares about the work and wants to contribute to the bigger picture. Their support has been such a gift, and I deeply value the way the founder and her team brings calm, clarity, and dedication into every task. She's doing a beautiful job - and it doesn't go unnoticed",
+    },
+    {
+      name: "Milan Petrović",
+      image: "/images/Milan.JPG",
+      occupation: "COO - Nexus Solutions",
+      comment:
+        "PUEPR is the perfect partner because they get the big picture. They combined their international experience with a deep understanding of our local market. It felt like having a global expert sitting right here with us. Their strategy had an immediate, positive impact on our business.",
     },
   ];
 
@@ -88,13 +87,13 @@ export default function Reviews() {
 
   return (
     <section
-      className="py-16 lg:pt-16 bg-white text-white"
+      className="py-16 lg:pt-16 bg-white text-gray-950"
       data-aos="fade-up"
       data-aos-duration="1000"
       id="reviews"
-      data-bg="bg-grey-custom"
-      data-text="text-white"
-      data-secondary="text-white"
+      data-bg="bg-white"
+      data-text="text-gray-950"
+      data-secondary="text-gray-950"
     >
       <Container>
         {/* Heading Section */}
@@ -103,20 +102,19 @@ export default function Reviews() {
           data-aos="fade-down"
           data-aos-delay="200"
         >
-          {" "}
           <div className="flex justify-center ">
             <div className="rounded-full border border-gray-200 bg-gray-100 px-4 py-2 w-fit">
               <span className="bg-gradient-to-b from-[#FFA100] to-[#FF000D] bg-clip-text text-transparent text-sm w-fit">
-                HOW WE WORK
+                TESTIMONIAL
               </span>
             </div>
           </div>
           <h2 className="w-full text-xl md:text-3xl md:text-[80px] text-black font-bold  font-oswald tracking-tighter text-center">
-            Trusted by Businesses That Grow Smarter
+            PUEPR is trusted by businesses that Grow smarter
           </h2>
           <p className="font-clash text-base md:text-lg text-black lg:w-5/12 text-center">
             See how companies worldwide have achieved measurable growth and
-            operational efficiency with PUEPR’s tailored solutions.{" "}
+            operational efficiency with PUEPR’s tailored solutions.
           </p>
         </div>
 

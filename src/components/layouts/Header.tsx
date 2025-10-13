@@ -96,6 +96,7 @@ export default function Header() {
 
   const isDarkSection =
     activeStyles.bg.includes("primary-300") ||
+    activeStyles.bg.includes("primary-500") ||
     activeStyles.bg.includes("primary-600") ||
     activeStyles.bg.includes("grey-custom") ||
     activeStyles.bg.includes("primary-custom") ||
@@ -116,7 +117,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/">
             <Image
-              src={isDarkSection ? SITE_CONFIG.logo : SITE_CONFIG.logoDark}
+              src={isDarkSection ? SITE_CONFIG.logo : SITE_CONFIG.logo}
               width={500}
               height={500}
               className="h-10 w-44 object-contain"
@@ -126,7 +127,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden w-1/2 lg:flex items-center space-x-5">
+          <div className="hidden  lg:flex items-center space-x-5">
             {navigation.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -150,7 +151,7 @@ export default function Header() {
                 </Link>
               );
             })}
-            <Link
+            {/* <Link
               href={SITE_CONFIG.corporatetrainingUrl}
               className={cn(
                 "transition-all duration-300 hover:scale-110 font-medium lg:text-base font-clash rounded-full px-4 py-2 ml-auto",
@@ -160,7 +161,7 @@ export default function Header() {
               )}
             >
               Book Free Consultation
-            </Link>
+            </Link> */}
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -219,7 +220,7 @@ export default function Header() {
             </nav>
 
             {/* CTA Button */}
-            <div
+            {/* <div
               data-aos="fade-up"
               data-aos-delay={navigation.length * 150 + 200}
               className="mt-12"
@@ -231,7 +232,7 @@ export default function Header() {
               >
                 Book Free Consultation
               </Link>
-            </div>
+            </div> */}
           </div>
         )}
       </Container>
