@@ -2,20 +2,11 @@
 
 import { Container } from "@/components/ui/Container";
 import { SITE_CONFIG } from "@/lib/constants";
-import {
-  Facebook,
-  X as TwitterX,
-  Linkedin,
-  Youtube,
-  Tiktok,
-  Instagram,
-} from "iconoir-react";
+import { Facebook, X as TwitterX, Linkedin, Instagram } from "iconoir-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   const footerSections = [
     {
       title: "COMPANY",
@@ -23,7 +14,7 @@ export default function Footer() {
         { name: "About", href: "/about" },
         { name: "Services", href: "/services" },
         { name: "Industry", href: "/industry" },
-        { name: "Why Choose Us", href: "/why-choose-ecp" },
+        { name: "Why Choose Us", href: "/why-choose-us" },
         { name: "Careers", href: "/careers" },
       ],
     },
@@ -32,9 +23,8 @@ export default function Footer() {
       links: [
         { name: "Blogs", href: "/blogs" },
         { name: "Contact Us", href: "/contact" },
-        { name: "Privacy Policy", href: "/privacy-policy" },
+        // { name: "Privacy Policy", href: "/privacy-policy" },
         { name: "Terms & Conditions", href: "/terms-&-conditions" },
-        { name: "Refund Policy", href: "/refund-policy" },
       ],
     },
   ];
@@ -45,7 +35,7 @@ export default function Footer() {
       data-bg="bg-grey-950"
       data-text="text-white"
       data-secondary="text-white"
-      className="bg-grey-950 text-white pb-10 pt-36 md:pt-44 lg:pt-68 relative z-0"
+      className="bg-grey-950 text-white pb-10 relative z-0"
     >
       <Container>
         <div className="py-16">
@@ -62,16 +52,17 @@ export default function Footer() {
                     src={SITE_CONFIG.logo}
                     width={500}
                     height={500}
-                    className="h-10 w-44"
+                    className="h-10 w-fit"
                     alt={SITE_CONFIG.name}
                   />
                 </Link>
               </div>
               <p className="text-grey-300 font-clash text-base">
-                Ethics Consulting Partners <br />
-                1309 Coffeen Avenue STE 17776, <br /> Sheridan Wyoming 82801,
-                <br />
-                United States
+                BELGRADE, GTC FORTYONE Milutina Milankovica Blvd 9ž <br />
+                Beograd <br />
+                Beograd-Beograd <br />
+                11070 <br />
+                Serbia
               </p>
               <div className="flex space-y-4 lg:space-x-4 flex-col lg:flex-row">
                 <div className="flex flex-col">
@@ -79,10 +70,10 @@ export default function Footer() {
                     Phone number
                   </h3>
                   <a
-                    href="tel:+1404-593-6660"
+                    href="tel:+381668735615"
                     className="text-white hover:text-gray-200 text-base transition-colors font-clash"
                   >
-                    +1 404-593-6660
+                    +381 66 8735615
                   </a>
                 </div>
                 <div className="flex flex-col">
@@ -90,15 +81,15 @@ export default function Footer() {
                     Email
                   </h3>
                   <a
-                    href="mailto:info@theecp.com"
+                    href="mailto:info@puepr.com"
                     className="text-white hover:text-gray-200 text-base transition-colors font-clash"
                   >
-                    info@theecp.com
+                    info@puepr.com
                   </a>
                 </div>
               </div>
               <div className="flex space-x-6 lg:flex-row">
-                <Link href="https://www.facebook.com/profile.php?id=100086541873470">
+                <Link href="https://www.facebook.com/share/1BBXno86GW/?mibextid=wwXIfr">
                   <Facebook
                     width={20}
                     height={20}
@@ -106,7 +97,7 @@ export default function Footer() {
                     strokeWidth={1.5}
                   />
                 </Link>
-                <Link href="https://www.linkedin.com/company/ecp-llc/posts/?feedView=all">
+                <Link href="https://www.linkedin.com/company/puepr/">
                   <Linkedin
                     width={20}
                     height={20}
@@ -114,7 +105,7 @@ export default function Footer() {
                     strokeWidth={1.5}
                   />
                 </Link>
-                <Link href="https://x.com/EthicsPart2464?t=ApKgf1yAXNRrWyczSAYmVA&s=09">
+                <Link href="https://x.com/pueprconsulting?s=21">
                   <TwitterX
                     width={20}
                     height={20}
@@ -122,33 +113,8 @@ export default function Footer() {
                     strokeWidth={1.5}
                   />
                 </Link>
-                <Link href="https://www.instagram.com/ethicsconsultingpartners?igsh=MWtyZXFqbXlhMnBuaw==">
+                <Link href="https://www.instagram.com/pueprconsulting?igsh=MXJxcmg5MGh1bnhrcg==">
                   <Instagram
-                    width={20}
-                    height={20}
-                    className="text-gray-400 duration-300 ease-in-out transition-all hover:text-white lg:hover:scale-110"
-                    strokeWidth={1.5}
-                  />
-                </Link>
-                {/* <Link href="https://bsky.app/profile/ethicspartners.bsky.social">
-                    <Image
-                      src="/icons/Bluesky.png"
-                      width={500}
-                      height={500}
-                      className="h-5 w-5 filter grayscale"
-                      alt=""
-                    />
-                  </Link> */}
-                <Link href="https://youtube.com/@ethicsconsultingpartners?si=HA2Lk_IYmRkYovcF">
-                  <Youtube
-                    width={20}
-                    height={20}
-                    className="text-gray-400 duration-300 ease-in-out transition-all hover:text-white lg:hover:scale-110"
-                    strokeWidth={1.5}
-                  />
-                </Link>
-                <Link href="/">
-                  <Tiktok
                     width={20}
                     height={20}
                     className="text-gray-400 duration-300 ease-in-out transition-all hover:text-white lg:hover:scale-110"
@@ -192,7 +158,7 @@ export default function Footer() {
           data-aos-delay="500"
         >
           <p className="text-grey-300 text-base text-center font-clash">
-            © {currentYear} Ethics Consulting Partners. All rights reserved.
+            © 2025 PUEPR. All rights reserved.
           </p>
         </div>
       </Container>

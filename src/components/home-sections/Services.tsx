@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import Image from "next/image";
 import { Button } from "../ui/Button";
 import { ArrowRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const services = [
   {
@@ -29,6 +30,8 @@ const services = [
 ];
 
 export default function Features() {
+  const router = useRouter();
+
   return (
     <section
       className="py-16 lg:py-32 bg-white"
@@ -93,6 +96,7 @@ export default function Features() {
             data-aos="zoom-in-right"
             data-aos-delay="100"
             className="flex items-center justify-center gap-3 w-fit"
+            onClick={() => router.push("/about")}
           >
             Discover More About Us <ArrowRight />
           </Button>

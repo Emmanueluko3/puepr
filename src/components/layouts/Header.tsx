@@ -126,7 +126,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden w-1/2 lg:flex items-center space-x-5">
+          <div className="hidden  lg:flex items-center space-x-5">
             {navigation.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -150,7 +150,7 @@ export default function Header() {
                 </Link>
               );
             })}
-            <Link
+            {/* <Link
               href={SITE_CONFIG.corporatetrainingUrl}
               className={cn(
                 "transition-all duration-300 hover:scale-110 font-medium lg:text-base font-clash rounded-full px-4 py-2 ml-auto",
@@ -160,7 +160,7 @@ export default function Header() {
               )}
             >
               Book Free Consultation
-            </Link>
+            </Link> */}
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -219,7 +219,7 @@ export default function Header() {
             </nav>
 
             {/* CTA Button */}
-            <div
+            {/* <div
               data-aos="fade-up"
               data-aos-delay={navigation.length * 150 + 200}
               className="mt-12"
@@ -231,7 +231,7 @@ export default function Header() {
               >
                 Book Free Consultation
               </Link>
-            </div>
+            </div> */}
           </div>
         )}
       </Container>

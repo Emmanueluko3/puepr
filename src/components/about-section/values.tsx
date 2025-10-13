@@ -2,208 +2,156 @@
 
 import { Container } from "@/components/ui/Container";
 import Image from "next/image";
-import { Button } from "../ui/Button";
-import { ArrowRight } from "lucide-react";
 
 const services = [
   {
-    title: "True Partnership",
+    title: "Innovation & Adaptability",
     content:
-      "We work hand-in-hand with your team, moving beyond consultancy to co-create success.",
+      "We embrace modern tools and creative approaches, adapting quickly to changing business needs to drive real impact.",
   },
   {
-    title: "Borderless Growth",
+    title: "Global Insight, Local Impact",
     content:
-      "Strong roots in Serbia & Montenegro, paired with strategies that scale across borders.",
+      "We deliver strategies that help your business succeed in any market by effectively blending international experience with crucial local knowledge.",
   },
   {
-    title: "Influence That Lasts",
+    title: "Clarity & Trust",
     content:
-      "From media to stakeholders, we shape narratives that endure, build trust, and drive lasting influence.",
+      "We prioritize open and clear communication at every stage, ensuring you always know what's happening and can have absolute confidence in our results.",
   },
   {
-    title: "Tailored to You",
+    title: "Results-Driven",
     content:
-      "Every solution is carefully customized to fit your market, reflect your story, and achieve your goals with precision.",
+      "We are committed to designing solutions that go beyond simple reports and metrics, focusing on generating genuine, measurable success for your business.",
+  },
+];
+
+const team = [
+  {
+    name: "Ekanem, P",
+    role: "Founder & CEO",
+    image: "/images/Ekanem-P.JPG",
+    delay: 0,
+  },
+  {
+    name: "Harrison, M",
+    role: "COO",
+    image: "/images/Harrison-M.jpg",
+    delay: 100,
+  },
+  {
+    name: "Lois G",
+    role: "Admin Assistant",
+    image: "/images/avater.jpg",
+    delay: 200,
+  },
+  {
+    name: "Blossom A",
+    role: "Lead Generation / Automation Specialist",
+    image: "/images/avater.jpg",
+    delay: 300,
   },
 ];
 
 export default function Features() {
   return (
     <section
-      className="pt-16   bg-white"
+      className="pt-16 bg-grey-100"
       data-aos="fade-up"
       data-aos-duration="1000"
-      id="features"
-      data-bg="bg-white"
-      data-text="text-gray-900"
-      data-secondary="text-gray-900"
+      id="values"
     >
-      <Container className="flex flex-col  md:flex-row  gap-6">
-        <div className="w-full flex  mt-7 flex-col gap-8">
-          <div className="rounded-full border border-gray-200 bg-gray-100 px-4 py-2 w-fit">
-            <span className="bg-gradient-to-b from-[#000AC3] to-[#000AC3] bg-clip-text text-transparent text-xs w-fit">
+      {/* Values Section */}
+      <Container className="flex flex-col-reverse md:flex-row items-center md:items-end gap-10">
+        <div className="flex flex-col w-full md:w-1/2 gap-8">
+          <div className="bg-white w-fit rounded-full h-full px-4 py-2 border border-gray-200 mx-auto md:mx-0">
+            <span className="rounded-full font-bold w-fit text-sm bg-gradient-to-b from-[#000AC3] to-[#000AC3] bg-clip-text text-transparent">
               PUEPR VALUES
             </span>
           </div>
 
-          <h2 className="w-full text-3xl text-gray-950 font-bold leading-[115%] mb-6 lg:mb-0 font-oswald tracking-tighter">
-            Our Values Drive Every Solution{" "}
+          <h2 className="text-2xl sm:text-3xl md:text-4xl text-gray-950 font-bold leading-[115%] font-oswald tracking-tighter text-center md:text-left">
+            Our values drive every solution
           </h2>
-          <p className="font-clash font-normal text-base md:text-lg text-grey-600 w-full">
-            At PUEPR, we believe in transparency, innovation, and measurable
-            results. These principles guide every project we undertake.{" "}
+
+          <p className="font-clash text-sm sm:text-base md:text-lg text-grey-600 text-center md:text-left">
+            At PUEPR, these are the principles that guide our work and our
+            relationship with you:
           </p>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {services.map((div, idx) => (
-              <div
-                key={idx}
-                className="bg-grey-100 rounded-2xl border border-gray-100 p-6"
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            {services.map(({ title, content }, idx) => (
+              <article
+                key={title}
+                className="rounded-2xl border border-gray-300 bg-gray-200 p-5 sm:p-6"
                 data-aos="zoom-in-up"
                 data-aos-delay={100 + idx * 100}
                 data-aos-duration="800"
               >
-                <h3 className="text-lg font-bold mb-2 font-oswald">
-                  {div.title}
+                <h3 className="text-base sm:text-lg font-bold mb-2 font-oswald">
+                  {title}
                 </h3>
-                <p className="text-grey-600 text-sm font-clash">
-                  {div.content}
+                <p className="text-grey-600 text-sm sm:text-base font-clash">
+                  {content}
                 </p>
-              </div>
+              </article>
             ))}
           </div>
-          <Button
-            variant="primary"
-            data-aos="zoom-in-right"
-            data-aos-delay="100"
-            className="flex items-center justify-center gap-3 w-fit"
-          >
-            Discover More About Us <ArrowRight />
-          </Button>
-        </div>{" "}
-        <div
-          className="flex flex-col w-full  lg:gap-8  lg:mb-0"
-          data-aos="fade-left"
-          data-aos-delay="100"
-        >
+        </div>
+
+        <div className="w-full md:w-1/2">
           <Image
-            src="/images/business.jpg"
-            alt=""
+            src="/images/about-1.jpg"
+            alt="Team at work"
             width={500}
-            height={300}
-            className="w-full h-full md:h-[550px] md:mt-[6rem]  object-cover rounded-2xl"
+            height={500}
+            data-aos="fade-left"
+            data-aos-delay="100"
+            className="w-full h-auto max-h-[400px] sm:max-h-[500px] object-cover rounded-2xl"
           />
         </div>
       </Container>
 
-      {/* Section Header */}
-      <Container className="py-16 w-full  lg:mt-[5rem]">
-        <div className="mb-12  lg:mb-16 font-clash">
-          <div className="inline-block mb-6">
-            <span className="text-sm font-semibold text-blue-600 uppercase tracking-wider px-4 py-2 bg-blue-50 rounded-full">
+      {/* Team Section */}
+      <Container className="py-16 w-full lg:mt-[5rem] font-clash">
+        <header className="mb-12 lg:mb-16 text-center lg:text-left">
+          <div className="bg-white w-fit rounded-full h-full px-4 py-2 border border-gray-200 mx-auto md:mx-0 mb-6">
+            <span className="rounded-full font-bold w-fit text-sm bg-gradient-to-b from-[#000AC3] to-[#000AC3] bg-clip-text text-transparent">
               OUR TEAM
             </span>
           </div>
 
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-start">
-            <h2 className="text-4xl md:text-5xl lg:text-5xl font-semibold text-black leading-tight text-balance">
-              Meet the Experts Driving Smarter Growth
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black leading-tight text-balance">
+              Meet the experts driving smarter growth
             </h2>
-            <p className="text-base md:text-lg text-muted-black leading-relaxed lg:pt-4">
+            <p className="text-sm sm:text-base md:text-lg text-muted-black leading-relaxed lg:pt-4">
               Our diverse team of professionals combines local expertise and
               global insights to deliver innovative, tailored solutions for
               businesses worldwide.
             </p>
           </div>
-        </div>
+        </header>
 
-        {/* Team Grid */}
-        <div className="grid font-clash gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {/* Team Member 1 */}
-          <div data-aos="zoom-in" data-aos-delay="0">
-            <div className="border-0 overflow-hidden">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {team.map(({ name, role, image, delay }) => (
+            <article
+              key={name}
+              data-aos="zoom-in"
+              data-aos-delay={delay}
+              className="overflow-hidden text-center"
+            >
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden">
-                <Image
-                  src="/images/avater.jpg"
-                  alt="Alex Markovic"
-                  fill
-                  className="object-cover"
-                />
+                <Image src={image} alt={name} fill className="object-cover" />
               </div>
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-semibold text-black mb-1">
-                  Alex Markovic
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-black mb-1">
+                  {name}
                 </h3>
-                <p className="text-sm text-muted-black">Founder & CEO</p>
+                <p className="text-xs sm:text-sm text-muted-black">{role}</p>
               </div>
-            </div>
-          </div>
-
-          {/* Team Member 2 */}
-          <div data-aos="zoom-in" data-aos-delay="100">
-            <div className="border-0 overflow-hidden">
-              <div className="relative rounded-2xl aspect-[3/4] overflow-hidden">
-                <Image
-                  src="/images/avater.jpg"
-                  alt="Milena Petrovic"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-semibold text-black mb-1">
-                  Milena Petrovic
-                </h3>
-                <p className="text-sm text-muted-black">
-                  Head of Project Management
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Team Member 3 */}
-          <div data-aos="zoom-in" data-aos-delay="200">
-            <div className="border-0 overflow-hidden">
-              <div className="relative  rounded-2xl aspect-[3/4] overflow-hidden">
-                <Image
-                  src="/images/avater.jpg"
-                  alt="Stefan Jovanovic"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-semibold text-black mb-1">
-                  Stefan Jovanovic
-                </h3>
-                <p className="text-sm text-muted-black">
-                  Lead Business Consultant
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Team Member 4 */}
-          <div data-aos="zoom-in" data-aos-delay="300">
-            <div className="border-0 overflow-hidden">
-              <div className="relative  rounded-2xl aspect-[3/4] overflow-hidden">
-                <Image
-                  src="/images/avater.jpg"
-                  alt="Ivana Nikolic"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-semibold  text-black mb-1">
-                  Ivana Nikolic
-                </h3>
-                <p className="text-sm text-muted-black">
-                  Automation & Tech Specialist
-                </p>
-              </div>
-            </div>
-          </div>
+            </article>
+          ))}
         </div>
       </Container>
     </section>

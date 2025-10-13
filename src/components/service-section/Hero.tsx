@@ -37,24 +37,14 @@ export default function Hero() {
       <Container
         data-aos="fade-up"
         data-aos-duration="300"
-        className="relative z-20  pt-6 flex items-start justify-start flex-col h-full gap-8 lg:py-16 py-14 text-white"
+        className="relative z-20  pt-6 flex justify-center flex-col h-full gap-8 lg:py-16 py-14 text-white"
       >
-        <Button
-          onClick={goToPage}
-          variant="secondary"
-          size="md"
-          className="px-6 mt-[5rem] py-2.5 font-medium"
-          data-aos="fade-left"
-          data-aos-delay="100"
-        >
-          Services
-        </Button>
         <h2
           className="text-5xl md:text-6xl lg:text-8xl font-bold leading-[114.99999999999999%] mb-6 lg:mb-0 font-oswald tracking-tighter text-start"
           data-aos="fade-up"
           data-aos-delay="40"
         >
-          Solutions That Drive Growth, Efficiency, and Success
+          Solutions that drive growth, efficiency, and success.
         </h2>
         <p
           data-aos="fade-up"

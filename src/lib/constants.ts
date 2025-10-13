@@ -1,6 +1,6 @@
 export const SITE_CONFIG = {
-  name: "ETHICS CONSULTING PARTNERS",
-  description: "Your Strategic Partner for Growth.",
+  name: "PUEPR",
+  description: "Empowering Sustainable Development.",
   url: "https://puepr.com/",
   corporatetrainingUrl: "",
   logo: "/logos/logo.png",
