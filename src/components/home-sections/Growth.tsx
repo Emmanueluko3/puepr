@@ -51,10 +51,10 @@ export function WhyChooseUsSection() {
 
   return (
     <section
-      data-bg="bg-white"
+      data-bg="bg-gray-100"
       data-text="text-gray-950"
       data-secondary="text-gray-950"
-      className="py-16 md:py-24 px-4 md:px-8 bg-gray-50"
+      className="py-16 md:py-24 px-4 md:px-8 bg-gray-100"
     >
       <div className="container mx-auto max-w-7xl">
         <div className="rounded-full border border-gray-200 bg-gray-100 px-4 py-2 w-fit">
@@ -65,8 +65,8 @@ export function WhyChooseUsSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-black leading-tight font-oswald">
-            Not just another service provider
-            <br />A true partner in growth
+            Expert solutions built for your business - real results without the
+            runaround.
           </h2>
 
           <p className="text-gray-600 font-clash text-base md:text-lg leading-relaxed flex items-center">

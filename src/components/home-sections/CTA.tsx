@@ -2,12 +2,18 @@ import Image from "next/image";
 
 export function CTASection() {
   return (
-    <section className="py-16 px-4 md:py-20 lg:py-24">
+    <section
+      id="contactCard"
+      data-bg="bg-gray-100"
+      data-text="text-grey-950"
+      data-secondary="text-grey-950"
+      className="py-16 px-4 md:py-20 lg:py-24 bg-gray-100"
+    >
       <div className="container mx-auto max-w-7xl">
         <div className="relative overflow-hidden rounded-3xl p-12 md:p-16 lg:p-20">
-          <div className="absolute inset-0">
+          {/* <div className="absolute inset-0">
             <Image src="/background.png" alt="" fill className="object-cover" />
-          </div>
+          </div> */}
 
           <div
             className="absolute inset-0"

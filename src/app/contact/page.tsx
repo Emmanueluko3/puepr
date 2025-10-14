@@ -16,6 +16,7 @@ import Input from "@/components/ui/Input";
 import Select from "@/components/ui/Select";
 import { Button } from "@/components/ui/Button";
 import { CTASection } from "@/components/home-sections/CTA";
+import { Container } from "@/components/ui/Container";
 
 const contactInfo = [
   {
@@ -25,7 +26,7 @@ const contactInfo = [
 Beograd 11070, Serbia`,
     delay: 400,
   },
-  { icon: Phone, title: "Phone", info: "+381 66 8735615", delay: 500 },
+  // { icon: Phone, title: "Phone", info: "+381 66 8735615", delay: 500 },
   { icon: Mail, title: "Email", info: "info@puepr.com", delay: 600 },
   { icon: Clock, title: "Working Hours", info: "9:00 - 17:00", delay: 700 },
 ];
@@ -63,7 +64,13 @@ export default function ContactPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="px-4 py-16 font-clash md:pt-[8rem]">
+      <section
+        id="contactHero"
+        data-bg="bg-white"
+        data-text="text-grey-950"
+        data-secondary="text-grey-950"
+        className="px-4 py-16 font-clash md:pt-[8rem]"
+      >
         <div className="container mx-auto p-8 border-[#F9FAFB] border-[3px] border-solid shadow-md max-w-7xl text-center">
           <h1
             className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-black"
@@ -105,12 +112,19 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Info */}
-      <section className="px-4 pb-16 md:pb-24">
-        <div className="container mx-auto max-w-7xl grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+      <section
+        id="contactCard"
+        data-bg="bg-white"
+        data-text="text-grey-950"
+        data-secondary="text-grey-950"
+        className="bg-white text-grey-950 pb-10 relative z-0"
+      >
+        <Container className="flex justify-center flex-col md:flex-row gap-6 w-full">
           {contactInfo.map(({ icon: Icon, title, info, delay }, i) => (
             <div
               key={i}
-              className="flex flex-col sm:flex-row items-center gap-4 rounded-2xl bg-gray-50 p-4 font-clash text-center sm:text-left"
+              className="w-full md:w-1/2 flex flex-col sm:flex-row items-center gap-4 rounded-2xl bg-gray-50 p-4 font-clash text-center sm:text-left"
               data-aos="zoom-in"
               data-aos-duration="800"
               data-aos-delay={delay}
@@ -128,12 +142,18 @@ export default function ContactPage() {
               </div>
             </div>
           ))}
-        </div>
+        </Container>
       </section>
 
       {/* Form Section */}
-      <section className="px-4 py-16 md:py-24">
-        <div className="container mx-auto max-w-7xl grid gap-8 lg:grid-cols-2 lg:gap-12">
+      <section
+        id="contactForm"
+        data-bg="bg-white"
+        data-text="text-grey-950"
+        data-secondary="text-grey-950"
+        className="py-16 md:py-24"
+      >
+        <Container className="grid gap-8 lg:grid-cols-2 lg:gap-12">
           <div className="relative h-[400px] md:h-[600px] w-full overflow-hidden rounded-3xl">
             <Image
               src="/images/contact.jpg"
@@ -227,7 +247,7 @@ export default function ContactPage() {
               </Form>
             </Formik>
           </div>
-        </div>
+        </Container>
       </section>
 
       <CTASection />

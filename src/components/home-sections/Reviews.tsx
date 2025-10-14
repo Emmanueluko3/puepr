@@ -37,7 +37,7 @@ export default function Reviews() {
       image: "/images/Dominique.JPG",
       occupation: "Founder - Dominique Ceara",
       comment:
-        "I just want to say how much I appreciate this amazing. They are not only reliable and efficient - they think with me. That kind of presence and initiative is rare. I can feel that PUEPR genuinely cares about the work and wants to contribute to the bigger picture. Their support has been such a gift, and I deeply value the way the founder and her team brings calm, clarity, and dedication into every task. She's doing a beautiful job - and it doesn't go unnoticed",
+        "I just want to say how much I appreciate this amazing team. They are not only reliable and efficient - they think with me. That kind of presence and initiative is rare. I can feel that PUEPR genuinely cares about the work and wants to contribute to the bigger picture. Their support has been such a gift, and I deeply value the way the founder and her team brings calm, clarity, and dedication into every task. She's doing a beautiful job - and it doesn't go unnoticed",
     },
     {
       name: "Milan Petrović",
@@ -113,7 +113,7 @@ export default function Reviews() {
             PUEPR is trusted by businesses that Grow smarter
           </h2>
           <p className="font-clash text-base md:text-lg text-black lg:w-5/12 text-center">
-            See how companies worldwide have achieved measurable growth and
+            See how businesses worldwide have achieved measurable growth and
             operational efficiency with PUEPR’s tailored solutions.
           </p>
         </div>

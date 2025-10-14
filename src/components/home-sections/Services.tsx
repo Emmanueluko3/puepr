@@ -42,7 +42,7 @@ export default function Features() {
       data-text="text-gray-900"
       data-secondary="text-gray-900"
     >
-      <Container className="flex flex-col md:flex-row items-end gap-6">
+      <Container className="flex flex-col md:flex-row gap-6">
         <article
           className="flex flex-col w-full pr-0 md:pr-10 lg:gap-8 mb-10 lg:mb-0"
           data-aos="fade-right"

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { Container } from "../ui/Container";
 
 const faqs = [
   {
@@ -50,8 +51,14 @@ export function FAQSection() {
   };
 
   return (
-    <section className="py-16 px-4 md:py-24 bg-gray-50">
-      <div className="max-w-4xl mx-auto">
+    <section
+      id="contactCard"
+      data-bg="bg-white"
+      data-text="text-grey-950"
+      data-secondary="text-grey-950"
+      className="py-16 px-4 md:py-24 bg-white"
+    >
+      <Container className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center font-clash mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
@@ -59,7 +66,7 @@ export function FAQSection() {
           </h2>
           <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
             Answers to the most common questions about our services, process,
-            and how we help businesses grow smarter.
+            and how we help businesses Grow smarter.
           </p>
         </div>
 
@@ -110,7 +117,7 @@ export function FAQSection() {
             </div>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

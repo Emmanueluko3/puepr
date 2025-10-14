@@ -13,18 +13,14 @@ export default function Footer() {
       links: [
         { name: "About", href: "/about" },
         { name: "Services", href: "/services" },
-        { name: "Industry", href: "/industry" },
-        { name: "Why Choose Us", href: "/why-choose-us" },
-        { name: "Careers", href: "/careers" },
       ],
     },
     {
       title: "HELP AND SUPPORT",
       links: [
-        { name: "Blogs", href: "/blogs" },
         { name: "Contact Us", href: "/contact" },
         // { name: "Privacy Policy", href: "/privacy-policy" },
-        { name: "Terms & Conditions", href: "/terms-&-conditions" },
+        // { name: "Terms & Conditions", href: "/terms-&-conditions" },
       ],
     },
   ];
@@ -58,14 +54,15 @@ export default function Footer() {
                 </Link>
               </div>
               <p className="text-grey-300 font-clash text-base">
-                BELGRADE, GTC FORTYONE Milutina Milankovica Blvd 9ž <br />
+                BELGRADE, GTC FORTYONE <br />
+                Milutina Milankovica Blvd 9ž <br />
                 Beograd <br />
                 Beograd-Beograd <br />
                 11070 <br />
                 Serbia
               </p>
               <div className="flex space-y-4 lg:space-x-4 flex-col lg:flex-row">
-                <div className="flex flex-col">
+                {/* <div className="flex flex-col">
                   <h3 className="text-base font-normal text-grey-300 font-clash mb-2">
                     Phone number
                   </h3>
@@ -75,7 +72,7 @@ export default function Footer() {
                   >
                     +381 66 8735615
                   </a>
-                </div>
+                </div> */}
                 <div className="flex flex-col">
                   <h3 className="text-base font-normal text-gray-300 font-clash mb-2">
                     Email
