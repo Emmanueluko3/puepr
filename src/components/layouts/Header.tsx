@@ -29,7 +29,7 @@ export default function Header() {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
-    { name: "About Us", href: "/about" },
+    { name: "About us", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
 
