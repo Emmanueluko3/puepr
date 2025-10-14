@@ -45,10 +45,10 @@ export default function Footer() {
               <div className="flex items-center">
                 <Link href="/">
                   <Image
-                    src={SITE_CONFIG.logo}
+                    src={SITE_CONFIG.logoLight}
                     width={500}
                     height={500}
-                    className="h-10 w-fit"
+                    className="h-10 w-40 md:w-fit"
                     alt={SITE_CONFIG.name}
                   />
                 </Link>
