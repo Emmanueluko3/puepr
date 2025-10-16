@@ -6,26 +6,34 @@ import { Button } from "../ui/Button";
 import { ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-const services = [
+export const services = [
   {
+    title: "Globally aligned expertise",
+    description:
+      "We deliver consulting solutions in digital transformation, automation, and business operations that align with global growth trends and evolving industry demands.",
     title: "Globally aligned expertise",
     content:
       "We deliver consulting solutions in digital transformation, automation, and business operations that align with global growth trends and evolving industry demands.",
   },
   {
     title: "Integrated solutions, One partner",
-    content:
+    description:
       "You get full-service support from our highly impactful and specialized team rather than hiring multiple vendors. One partnership, complete coordination, maximum efficiency.",
   },
   {
     title: "Built for global business",
-    content:
+    description:
       "Our cloud-based delivery model, GDPR compliance, and modern collaboration tools position us to serve international clients with the same excellence we deliver locally.",
   },
   {
     title: "Collaborative partnership / Direct delivery",
-    content:
+    description:
       "We work hand-in-hand with your team, moving beyond strategy to seamless execution, delivering tangible outcomes and lasting business growth.",
+  },
+  {
+    title: "Pricing benchmarks",
+    description:
+      "Our pricing stays competitive with Eastern European standards while delivering clear ROI on every project.",
   },
 ];
 
@@ -42,7 +50,7 @@ export default function Features() {
       data-text="text-gray-900"
       data-secondary="text-gray-900"
     >
-      <Container className="flex flex-col md:flex-row items-end gap-6">
+      <Container className="flex flex-col md:flex-row items-end md:items-start gap-6">
         <article
           className="flex flex-col w-full pr-0 md:pr-10 lg:gap-8 mb-10 lg:mb-0"
           data-aos="fade-right"
@@ -54,7 +62,7 @@ export default function Features() {
             </span>
           </span>
 
-          <h2 className="w-full text-2xl sm:text-3xl text-gray-950 font-bold leading-[115%] mb-6 lg:mb-0 font-oswald tracking-tighter">
+          <h2 className="w-full text-3xl text-gray-950 font-bold leading-[115%] mb-6 lg:mb-0 font-oswald tracking-tighter">
             Smarter strategies, Lasting growth
           </h2>
 
@@ -67,16 +75,8 @@ export default function Features() {
           />
         </article>
 
-        <article className="w-full flex flex-col gap-8">
-          <p className="font-clash font-normal text-base md:text-lg text-grey-600 w-full leading-relaxed">
-            PUEPR is the integrated global partner for digital and operational
-            transformation. We use an agile approach and collaborative
-            partnership to deliver seamless execution, maximum efficiency, and
-            clear ROI, ensuring your business achieves smarter strategies and
-            lasting growth.
-          </p>
-
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="w-full flex flex-col gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {services.map((card, idx) => (
               <li
                 key={idx}
@@ -89,7 +89,7 @@ export default function Features() {
                   {card.title}
                 </h3>
                 <p className="text-grey-600 text-sm font-clash">
-                  {card.content}
+                  {card.description}
                 </p>
               </li>
             ))}
@@ -102,10 +102,11 @@ export default function Features() {
             className="flex items-center justify-center gap-3 w-fit text-sm sm:text-base"
             onClick={() => router.push("/about")}
           >
+            Get Started <ArrowRight />
             Discover more about us
             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </Button>
-        </article>
+      
       </Container>
     </section>
   );

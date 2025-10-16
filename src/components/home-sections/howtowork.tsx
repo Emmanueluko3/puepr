@@ -24,7 +24,7 @@ export default function HowWeWorkSection() {
 
         <h2 className="text-sm font-clash md:text-xl lg:text-4xl font-bold text-white text-center mb-6 leading-tight px-4">
           Our process is designed to understand, strategize, and deliver
-          trackable success at every stage of your business.
+          trackable success at every stage of your business.{" "}
         </h2>
 
         <p className="text-white/90 text-center text-lg md:text-xl max-w-4xl mx-auto mb-16 font-clash leading-relaxed">

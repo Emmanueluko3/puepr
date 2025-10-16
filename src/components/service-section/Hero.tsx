@@ -47,7 +47,7 @@ export default function Hero() {
         >
           Discover our full range of core and specialized services, crafted to
           help businesses streamline operations, unlock new opportunities, and
-          achieve sustainable growth, whether you’re expanding locally in Serbia
+          achieve sustainable growth—whether you’re expanding locally in Serbia
           and Montenegro or scaling globally.
         </p>
         <div
