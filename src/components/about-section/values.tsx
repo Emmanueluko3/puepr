@@ -2,27 +2,53 @@
 
 import { Container } from "@/components/ui/Container";
 import Image from "next/image";
-
 export const services = [
   {
-    title: "Local Insight, Global Perspective",
+    title: "Innovation & Adaptability",
     content:
-      "We work hand-in-hand with your team, moving beyond consultancy to co-create success.",
+      "We embrace modern tools and creative approaches, adapting quickly to changing business needs to drive real impact.",
   },
   {
-    title: "Agile and Adaptive",
+    title: "Global Insight, Local Impact",
     content:
-      "Our team adapts quickly to changing business needs, using modern tools and creative approaches to implement solutions that drive real impact.",
+      "We deliver strategies that help your business succeed in any market by effectively blending international experience with crucial local knowledge.",
   },
   {
-    title: "Transparent Collaboration",
+    title: "Clarity & Trust",
     content:
-      "Our communication style is open and clear at every stage, ensuring you always know what's happening and can trust our results.",
+      "We prioritize open and clear communication at every stage, ensuring you always know what's happening and can have absolute confidence in our results.",
   },
   {
-    title: "Results That Matter",
+    title: "Results-Driven",
     content:
-      "At PUEPR, our solutions are designed to generate measurable growth and tangible outcomes, helping your business thrive beyond simple reports and metrics.",
+      "We are committed to designing solutions that go beyond simple reports and metrics, focusing on generating genuine, measurable success for your business.",
+  },
+];
+
+const team = [
+  {
+    name: "Ekanem, P",
+    role: "Founder & CEO",
+    image: "/images/Ekanem-P.JPG",
+    delay: 0,
+  },
+  {
+    name: "Harrison, M",
+    role: "COO",
+    image: "/images/Harrison-M.jpg",
+    delay: 100,
+  },
+  {
+    name: "Lois G",
+    role: "Admin Assistant",
+    image: "/images/avater.jpg",
+    delay: 200,
+  },
+  {
+    name: "Blossom A",
+    role: "Lead Generation / Automation Specialist",
+    image: "/images/avater.jpg",
+    delay: 300,
   },
 ];
 

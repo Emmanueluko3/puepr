@@ -11,9 +11,6 @@ export const services = [
     title: "Globally aligned expertise",
     description:
       "We deliver consulting solutions in digital transformation, automation, and business operations that align with global growth trends and evolving industry demands.",
-    title: "Globally aligned expertise",
-    content:
-      "We deliver consulting solutions in digital transformation, automation, and business operations that align with global growth trends and evolving industry demands.",
   },
   {
     title: "Integrated solutions, One partner",
@@ -51,8 +48,8 @@ export default function Features() {
       data-secondary="text-gray-900"
     >
       <Container className="flex flex-col md:flex-row items-end md:items-start gap-6">
-        <article
-          className="flex flex-col w-full pr-0 md:pr-10 lg:gap-8 mb-10 lg:mb-0"
+        <div
+          className="flex flex-col w-full pr-10 lg:gap-8 mb-14 lg:mb-0"
           data-aos="fade-right"
           data-aos-delay="100"
         >
@@ -73,27 +70,29 @@ export default function Features() {
             height={300}
             className="w-full h-auto object-cover rounded-2xl"
           />
-        </article>
+        </div>
 
         <div className="w-full flex flex-col gap-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {services.map((card, idx) => (
-              <li
-                key={idx}
-                className="bg-grey-100 rounded-2xl border border-gray-100 p-6"
-                data-aos="zoom-in-up"
-                data-aos-delay={100 + idx * 100}
-                data-aos-duration="800"
-              >
-                <h3 className="text-lg font-bold mb-2 font-oswald">
-                  {card.title}
-                </h3>
-                <p className="text-grey-600 text-sm font-clash">
-                  {card.description}
-                </p>
-              </li>
-            ))}
-          </ul>
+            <ul>
+              {services.map((card, idx) => (
+                <li
+                  key={idx}
+                  className="bg-grey-100 rounded-2xl border border-gray-100 p-6"
+                  data-aos="zoom-in-up"
+                  data-aos-delay={100 + idx * 100}
+                  data-aos-duration="800"
+                >
+                  <h3 className="text-lg font-bold mb-2 font-oswald">
+                    {card.title}
+                  </h3>
+                  <p className="text-grey-600 text-sm font-clash">
+                    {card.description}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <Button
             variant="primary"
@@ -103,10 +102,8 @@ export default function Features() {
             onClick={() => router.push("/about")}
           >
             Get Started <ArrowRight />
-            Discover more about us
-            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </Button>
-      
+        </div>
       </Container>
     </section>
   );
