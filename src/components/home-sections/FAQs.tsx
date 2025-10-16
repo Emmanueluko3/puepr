@@ -19,7 +19,7 @@ const faqs = [
     id: 3,
     question: "Can you help with business registration in Serbia & Montenegro?",
     answer:
-      "Yes. We assist businesses with the full registration process in Serbia and Montenegro, from preparing documentation to navigating local requirements. Our team ensures that your setup is compliant, efficient, and aligned with your long-term growth goals.",
+      "Yes. We assists business with the full registration process in Serbia and Montenegro, from preparing documentation to navigating local requirements. Our team ensures that your setup is compliant, efficient, and aligned with your long-term growth goals.",
   },
   {
     id: 4,
