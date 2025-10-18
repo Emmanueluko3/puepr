@@ -18,7 +18,7 @@ export default function Footer() {
     {
       title: "HELP AND SUPPORT",
       links: [
-        { name: "Contact Us", href: "/contact" },
+        { name: "Contact us", href: "/contact" },
         // { name: "Privacy Policy", href: "/privacy-policy" },
         // { name: "Terms & Conditions", href: "/terms-&-conditions" },
       ],
