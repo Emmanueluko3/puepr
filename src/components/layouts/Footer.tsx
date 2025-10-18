@@ -186,7 +186,7 @@ export default function Footer() {
                     href="tel:+381668735615"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    +381 66 8735615
+                    +381637160315
                   </a>
                 </div>
               </div>
@@ -214,12 +214,9 @@ export default function Footer() {
                 </div>
                 <div>
                   <h4 className="text-white font-semibold mb-1">
-                    Ethics Consulting Partners Head Quaters
+                    BELGRADE, GTC FORTYONE
                   </h4>
-                  <p className="text-gray-400">
-                    1309 Coffeen Avenue STE 17776, Sheridan Wyoming 82801,
-                    United States
-                  </p>
+                  <p className="text-gray-400">Milutina Milankovica Blvd 9ž</p>
                 </div>
               </div>
             </div>
@@ -229,7 +226,7 @@ export default function Footer() {
           <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div>
               <p className="text-gray-400 text-sm mb-1">
-                © {currentYear} Ethics Consulting Partners. All Rights Reserved.
+                © {currentYear} PEUEPR. All Rights Reserved.
               </p>
               <p className="text-gray-500 text-sm italic">
                 Grow Smarter, Not Harder
