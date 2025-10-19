@@ -20,7 +20,7 @@ const services = [
       "We prioritize open and clear communication at every stage, ensuring you always know what's happening and can have absolute confidence in our results.",
   },
   {
-    title: "Results-Driven",
+    title: "Result-driven",
     content:
       "We are committed to designing solutions that go beyond simple reports and metrics, focusing on generating genuine, measurable success for your business.",
   },

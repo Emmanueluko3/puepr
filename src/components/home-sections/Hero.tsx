@@ -5,20 +5,9 @@ import { Button } from "../ui/Button";
 import { Container } from "../ui/Container";
 import { useRouter } from "next/navigation";
 import { SITE_CONFIG } from "@/lib/constants";
-import { useState } from "react";
 
 export default function Hero() {
   const router = useRouter();
-
-  const videos = [
-    "/videos/hero.mp4",
-    "/videos/hero2.mp4",
-    "/videos/hero3.mp4",
-    "/videos/hero4.mp4",
-    "/videos/hero5.mp4",
-  ];
-  const [i, setI] = useState(0);
-
   return (
     <section
       id="hero"
@@ -36,14 +25,13 @@ export default function Hero() {
         className="absolute top-0 left-0 w-full h-full object-cover"
       />
       <video
-        key={i}
         autoPlay
         muted
+        loop
         playsInline
-        onEnded={() => setI((i + 1) % videos.length)}
         className="absolute top-0 left-0 w-full h-full object-cover"
       >
-        <source src={videos[i]} type="video/mp4" />
+        <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40 z-10" />
