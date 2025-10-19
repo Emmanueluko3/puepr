@@ -1,6 +1,10 @@
+"use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { Button } from "../ui/Button";
 
 export function CTASection() {
+  const router = useRouter();
   return (
     <section
       id="contactCard"
@@ -11,9 +15,14 @@ export function CTASection() {
     >
       <div className="container mx-auto max-w-7xl">
         <div className="relative overflow-hidden rounded-3xl p-12 md:p-16 lg:p-20">
-          {/* <div className="absolute inset-0">
-            <Image src="/background.png" alt="" fill className="object-cover" />
-          </div> */}
+          <div className="absolute inset-0">
+            <Image
+              src="/images/ctaoverlay.png"
+              alt=""
+              fill
+              className="object-cover"
+            />
+          </div>
 
           <div
             className="absolute inset-0"
@@ -52,9 +61,13 @@ export function CTASection() {
                 {/* Profile image positioned on the right */}
               </div>
 
-              <button className="!bg-white text-gray-900 hover:bg-gray-100 font-medium px-8 py-2 text-lg rounded-full transition-all">
+              <Button
+                onClick={() => router.push("/contact")}
+                variant="secondary"
+                className=" text-gray-900 font-medium px-8 py-2 text-lg rounded-full transition-all"
+              >
                 Get started today
-              </button>
+              </Button>
             </div>
           </div>
         </div>

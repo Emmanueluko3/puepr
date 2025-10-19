@@ -86,9 +86,8 @@ export function ServicesSection() {
   return (
     <>
       {sections.map((section, sectionIndex) => (
-        <>
+        <div key={sectionIndex}>
           <section
-            key={sectionIndex}
             id={section.id}
             data-bg={section.dataBg}
             data-text={section.dataText}
@@ -142,7 +141,7 @@ export function ServicesSection() {
             </div>
           </section>
           {section.withCTA && <CTASection />}
-        </>
+        </div>
       ))}
     </>
   );

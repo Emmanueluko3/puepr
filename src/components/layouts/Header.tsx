@@ -176,23 +176,23 @@ export default function Header() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div
-            className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center space-y-8 overflow-hidden"
+            className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center px-6 py-10 space-y-10 overflow-y-auto sm:space-y-12 sm:px-10"
             data-aos="fade-down"
             data-aos-duration="600"
           >
             {/* Close Button (Top-Right) */}
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="absolute top-6 right-6 p-2 text-gray-900"
+              className="absolute top-4 right-4 p-2 text-gray-900 hover:text-black transition-colors"
               aria-label="Close menu"
               data-aos="fade-left"
               data-aos-delay="200"
             >
-              <X size={28} />
+              <X size={26} />
             </button>
 
             {/* Navigation Links */}
-            <nav className="flex font-clash gap-[3rem] flex-col items-center space-y-8 -mt-[2rem]">
+            <nav className="flex flex-col items-center w-full space-y-8 sm:space-y-10 mt-4">
               {navigation.map((item, index) => {
                 const isActive = pathname === item.href;
                 return (
@@ -200,13 +200,13 @@ export default function Header() {
                     key={item.name}
                     data-aos="fade-right"
                     data-aos-delay={index * 150}
-                    className="overflow-hidden"
+                    className="w-full text-center"
                   >
                     <Link
                       href={item.href}
                       onClick={() => setIsMenuOpen(false)}
                       className={cn(
-                        "block text-3xl font-semibold tracking-wide text-center transition-all duration-300",
+                        "block text-2xl sm:text-3xl font-semibold tracking-wide transition-all duration-300",
                         isActive
                           ? "text-black scale-105"
                           : "text-gray-800 hover:text-gray-900"
@@ -219,20 +219,20 @@ export default function Header() {
               })}
             </nav>
 
-            {/* CTA Button */}
+            {/* CTA Button (Optional) */}
             {/* <div
-              data-aos="fade-up"
-              data-aos-delay={navigation.length * 150 + 200}
-              className="mt-12"
-            >
-              <Link
-                href={SITE_CONFIG.corporatetrainingUrl}
-                onClick={() => setIsMenuOpen(false)}
-                className="inline-block text-lg font-clash font-semibold bg-black text-white rounded-full px-8 py-3 transition-transform duration-300 hover:scale-105"
-              >
-                Book Free Consultation
-              </Link>
-            </div> */}
+          data-aos="fade-up"
+          data-aos-delay={navigation.length * 150 + 200}
+          className="mt-10 sm:mt-12"
+        >
+          <Link
+            href={SITE_CONFIG.corporatetrainingUrl}
+            onClick={() => setIsMenuOpen(false)}
+            className="inline-block text-base sm:text-lg font-clash font-semibold bg-black text-white rounded-full px-8 py-3 transition-transform duration-300 hover:scale-105"
+          >
+            Book Free Consultation
+          </Link>
+        </div> */}
           </div>
         )}
       </Container>

@@ -9,6 +9,7 @@ import {
   Phone,
   Mail,
   Clock,
+  MessageCircle,
 } from "lucide-react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
@@ -41,6 +42,10 @@ const socials = [
   {
     href: "https://www.instagram.com/pueprconsulting?igsh=MXJxcmg5MGh1bnhrcg==",
     icon: Instagram,
+  },
+  {
+    href: "https://connect.viber.com/business/57c286bc-abfa-11f0-ab4e-ba164ec54561",
+    icon: MessageCircle,
   },
 ];
 

@@ -42,7 +42,7 @@ const team = [
   {
     name: "Lois G",
     role: "Admin Assistant",
-    image: "/images/LOIS-G.jpeg",
+    image: "/images/LOIS-G.JPG",
     delay: 200,
   },
   {
@@ -103,7 +103,7 @@ export default function Features() {
 
           <div className="w-full md:w-1/2">
             <Image
-              src="/images/about-1.jpg"
+              src="/images/about-1.jpeg"
               alt="Team at work"
               width={500}
               height={500}

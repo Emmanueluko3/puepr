@@ -7,8 +7,6 @@ import {
   X as TwitterX,
   Linkedin,
   Mail,
-  Youtube,
-  Tiktok,
   Instagram,
   Phone,
   MapPin,
@@ -16,10 +14,9 @@ import {
 
 import Image from "next/image";
 import Link from "next/link";
-import Input from "../ui/Input";
 import { Button } from "../ui/Button";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { MessageCircle } from "lucide-react";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -45,7 +42,7 @@ export default function Footer() {
                 src={SITE_CONFIG.logoLight}
                 width={500}
                 height={500}
-                className="h-10 w-44"
+                className="h-12 w-fit"
                 alt={SITE_CONFIG.name}
               />
             </Link>
@@ -54,12 +51,12 @@ export default function Footer() {
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
             <div className="max-w-xl">
               <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-white">
-                Stay Ahead with Smarter Business Insights
+                Stay ahead with smarter business insights
               </h2>
               <p className="text-gray-400 text-base">
                 Subscribe to PEUEPR&apos;s newsletter and get the latest tips,
-                strategies, and updates to grow your business
-                efficiently—delivered straight to your inbox.
+                strategies, and updates to grow your business efficiently
+                delivered straight to your inbox.
               </p>
             </div>
 
@@ -89,7 +86,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-12">
+        <div className="border-t border-grey-900 pt-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-12">
             {/* Quick Links */}
             <div className="lg:col-span-3">
@@ -129,14 +126,6 @@ export default function Footer() {
                     Contact
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href="/careers"
-                    className="text-gray-400 hover:text-white transition-colors text-base"
-                  >
-                    FAQ
-                  </Link>
-                </li>
               </ul>
             </div>
 
@@ -156,7 +145,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/privacy-policy"
+                    href="/privacypolicy"
                     className="text-gray-400 hover:text-white transition-colors text-base"
                   >
                     Privacy Policies
@@ -164,10 +153,10 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/contact"
+                    href="/refundpolicy"
                     className="text-gray-400 hover:text-white transition-colors text-base"
                   >
-                    Help Center
+                    Refund Policies
                   </Link>
                 </li>
               </ul>
@@ -214,16 +203,18 @@ export default function Footer() {
                 </div>
                 <div>
                   <h4 className="text-white font-semibold mb-1">
-                    BELGRADE, GTC FORTYONE
+                    PUEPR Head Quarters
                   </h4>
-                  <p className="text-gray-400">Milutina Milankovica Blvd 9ž</p>
+                  <p className="text-gray-400">
+                    Milutina Milankovica Blvd 9ž Beograd 11070, Serbia
+                  </p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Bottom Bar */}
-          <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="border-t border-grey-900 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div>
               <p className="text-gray-400 text-sm mb-1">
                 © {currentYear} PEUEPR. All Rights Reserved.
@@ -236,28 +227,34 @@ export default function Footer() {
             {/* Social Icons */}
             <div className="flex gap-4">
               <Link
-                href="https://www.facebook.com/profile.php?id=100086541873470"
+                href="https://www.facebook.com/share/1BBXno86GW/?mibextid=wwXIfr"
                 className="bg-[#2a2a2a] p-3 rounded-lg hover:bg-[#3a3a3a] transition-colors"
               >
                 <Facebook width={20} height={20} className="text-white" />
               </Link>
               <Link
-                href="https://x.com/EthicsPart2464?t=ApKgf1yAXNRrWyczSAYmVA&s=09"
+                href="https://x.com/pueprconsulting?s=21"
                 className="bg-[#2a2a2a] p-3 rounded-lg hover:bg-[#3a3a3a] transition-colors"
               >
                 <TwitterX width={20} height={20} className="text-white" />
               </Link>
               <Link
-                href="https://www.linkedin.com/company/ecp-llc/posts/?feedView=all"
+                href="https://www.linkedin.com/company/puepr/"
                 className="bg-[#2a2a2a] p-3 rounded-lg hover:bg-[#3a3a3a] transition-colors"
               >
                 <Linkedin width={20} height={20} className="text-white" />
               </Link>
               <Link
-                href="https://www.instagram.com/ethicsconsultingpartners?igsh=MWtyZXFqbXlhMnBuaw=="
+                href="https://www.instagram.com/pueprconsulting?igsh=MXJxcmg5MGh1bnhrcg=="
                 className="bg-[#2a2a2a] p-3 rounded-lg hover:bg-[#3a3a3a] transition-colors"
               >
                 <Instagram width={20} height={20} className="text-white" />
+              </Link>
+              <Link
+                href="https://connect.viber.com/business/57c286bc-abfa-11f0-ab4e-ba164ec54561"
+                className="bg-[#2a2a2a] p-3 rounded-lg hover:bg-[#3a3a3a] transition-colors"
+              >
+                <MessageCircle width={20} height={20} className="text-white" />
               </Link>
             </div>
           </div>
