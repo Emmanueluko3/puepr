@@ -20,7 +20,7 @@ const services = [
       "We prioritize open and clear communication at every stage, ensuring you always know what's happening and can have absolute confidence in our results.",
   },
   {
-    title: "Results-Driven",
+    title: "Result-driven",
     content:
       "We are committed to designing solutions that go beyond simple reports and metrics, focusing on generating genuine, measurable success for your business.",
   },
@@ -36,13 +36,13 @@ const team = [
   {
     name: "Harrison, M",
     role: "COO",
-    image: "/images/Harrison-M.jpg",
+    image: "/images/HARRISON-M.jpg",
     delay: 100,
   },
   {
     name: "Lois G",
     role: "Admin Assistant",
-    image: "/images/LOIS-G.jpeg",
+    image: "/images/LOIS-G.JPG",
     delay: 200,
   },
   {
@@ -103,7 +103,7 @@ export default function Features() {
 
           <div className="w-full md:w-1/2">
             <Image
-              src="/images/about-1.jpg"
+              src="/images/about-1.jpeg"
               alt="Team at work"
               width={500}
               height={500}

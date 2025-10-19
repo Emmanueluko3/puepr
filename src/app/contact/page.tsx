@@ -1,15 +1,13 @@
 "use client";
 import Image from "next/image";
+import { MapPin, Mail, Clock, MessageCircle } from "lucide-react";
 import {
-  Facebook,
-  Twitter,
+  X as TwitterX,
   Linkedin,
   Instagram,
-  MapPin,
-  Phone,
-  Mail,
-  Clock,
-} from "lucide-react";
+  Facebook,
+  Whatsapp,
+} from "iconoir-react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import Input from "@/components/ui/Input";
@@ -21,14 +19,13 @@ import { Container } from "@/components/ui/Container";
 const contactInfo = [
   {
     icon: MapPin,
-    title: "PUEPR Head Quarters",
+    title: "PUEPR head quarters",
     info: `Milutina Milankovica Blvd 9ž
 Beograd 11070, Serbia`,
     delay: 400,
   },
-  // { icon: Phone, title: "Phone", info: "+381 66 8735615", delay: 500 },
   { icon: Mail, title: "Email", info: "info@puepr.com", delay: 600 },
-  { icon: Clock, title: "Working Hours", info: "9:00 - 17:00", delay: 700 },
+  { icon: Clock, title: "Working hours", info: "9:00 - 17:00", delay: 700 },
 ];
 
 const socials = [
@@ -36,11 +33,19 @@ const socials = [
     href: "https://www.facebook.com/share/1BBXno86GW/?mibextid=wwXIfr",
     icon: Facebook,
   },
-  { href: "https://x.com/pueprconsulting?s=21", icon: Twitter },
+  { href: "https://x.com/pueprconsulting?s=21", icon: TwitterX },
   { href: "https://www.linkedin.com/company/puepr/", icon: Linkedin },
   {
     href: "https://www.instagram.com/pueprconsulting?igsh=MXJxcmg5MGh1bnhrcg==",
     icon: Instagram,
+  },
+  {
+    href: "https://wa.me/381637160315",
+    icon: Whatsapp,
+  },
+  {
+    href: "https://connect.viber.com/business/57c286bc-abfa-11f0-ab4e-ba164ec54561",
+    icon: MessageCircle,
   },
 ];
 
@@ -93,7 +98,7 @@ export default function ContactPage() {
 
           {/* Social Icons */}
           <div
-            className="mb-16 flex justify-center gap-4"
+            className="mb-16 flex justify-center flex-wrap gap-4"
             data-aos="zoom-in"
             data-aos-duration="800"
             data-aos-delay="300"
@@ -156,7 +161,7 @@ export default function ContactPage() {
         <Container className="grid gap-8 lg:grid-cols-2 lg:gap-12">
           <div className="relative h-[400px] md:h-[600px] w-full overflow-hidden rounded-3xl">
             <Image
-              src="/images/contact.jpg"
+              src="/images/contact.JPG"
               alt="Team collaboration"
               fill
               className="object-cover"
@@ -242,7 +247,7 @@ export default function ContactPage() {
                   type="submit"
                   className="w-full rounded-full px-8 py-4 text-lg font-semibold font-clash text-white transition-all hover:bg-blue-700 hover:shadow-lg"
                 >
-                  Send Your Message
+                  Send your message
                 </Button>
               </Form>
             </Formik>

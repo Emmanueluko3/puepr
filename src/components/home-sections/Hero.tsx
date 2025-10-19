@@ -8,7 +8,6 @@ import { SITE_CONFIG } from "@/lib/constants";
 
 export default function Hero() {
   const router = useRouter();
-
   return (
     <section
       id="hero"
@@ -27,18 +26,13 @@ export default function Hero() {
       />
       <video
         autoPlay
-        loop
         muted
+        loop
         playsInline
         className="absolute top-0 left-0 w-full h-full object-cover"
       >
-        <source
-          src="/images/landingPage/AdobeStock_1263557849.mov"
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
+        <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
-
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40 z-10" />
 
@@ -80,7 +74,7 @@ export default function Hero() {
             Book your free consultation
           </Button>
           <Button
-            onClick={() => router.push("/contact")}
+            onClick={() => router.push("/services")}
             variant="secondary"
             size="md"
             className="w-full sm:w-auto px-6 py-2.5 font-medium"

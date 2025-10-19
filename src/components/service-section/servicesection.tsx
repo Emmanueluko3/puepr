@@ -49,7 +49,7 @@ const sections = [
         icon: Target,
         title: "Lead generation",
         description:
-          "We specialize in delivering high-quality, verified leads that fuel business growth. From targeted research and contact database building to industry-specific campaigns and social media outreach, our lead generation services connect you with prospects ready to convert.",
+          "We specialize in delivering high-quality, verified leads that fuel business growth. From targeted research and contact database building to industry-specific lead lists, our lead generation services help you fill your pipeline with prospects ready to convert.",
       },
     ],
     className: "font-clash",
@@ -86,9 +86,8 @@ export function ServicesSection() {
   return (
     <>
       {sections.map((section, sectionIndex) => (
-        <>
+        <div key={sectionIndex}>
           <section
-            key={sectionIndex}
             id={section.id}
             data-bg={section.dataBg}
             data-text={section.dataText}
@@ -142,7 +141,7 @@ export function ServicesSection() {
             </div>
           </section>
           {section.withCTA && <CTASection />}
-        </>
+        </div>
       ))}
     </>
   );

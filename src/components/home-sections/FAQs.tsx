@@ -62,7 +62,7 @@ export function FAQSection() {
         {/* Header */}
         <div className="text-center font-clash mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Frequently Asked Questions
+            Frequently asked questions
           </h2>
           <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
             Answers to the most common questions about our services, process,

@@ -13,7 +13,7 @@ export default function Hero() {
       data-bg="bg-transparent"
       data-text="text-white"
       data-secondary="text-white"
-      className="relative md:h-screen w-full overflow-hidden flex justify-center items-center"
+      className="relative min-h-screen w-full overflow-hidden flex justify-center items-center"
     >
       {/* Background Image */}
       <Image
@@ -23,6 +23,16 @@ export default function Hero() {
         alt=""
         className="absolute top-0 left-0 w-full h-full  object-cover"
       />
+
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover"
+      >
+        <source src="/videos/services.mp4" type="video/mp4" />
+      </video>
 
       {/* Overlay */}
       <div className="absolute hidden lg:block inset-0 bg-black/20 z-10" />

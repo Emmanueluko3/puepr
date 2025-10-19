@@ -25,7 +25,7 @@ export default function HomePage() {
       data-bg="bg-white"
       data-text="text-grey-950"
       data-secondary="text-grey-950"
-      className="container text-gray-950 font-clash mx-auto px-4 py-12 md:py-20 lg:py-32"
+      className="container text-gray-950 font-clash mx-auto px-4 py-26 md:py-20 lg:py-32"
     >
       {/* Heading & Subheading */}
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-start mb-12 lg:mb-16">
@@ -54,7 +54,7 @@ export default function HomePage() {
         className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden mb-12 lg:mb-20"
       >
         <Image
-          src="/images/about.jpg"
+          src="/images/about.JPG"
           alt="Team collaboration - hands joining together"
           fill
           className="object-cover"
