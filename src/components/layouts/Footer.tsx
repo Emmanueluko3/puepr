@@ -57,7 +57,7 @@ export default function Footer() {
                 Stay ahead with smarter business insights
               </h2>
               <p className="text-gray-400 text-base">
-                Subscribe to PEUEPR&apos;s newsletter and get the latest tips,
+                Subscribe to PUEPR&apos;s newsletter and get the latest tips,
                 strategies, and updates to grow your business efficiently
                 delivered straight to your inbox.
               </p>
@@ -221,7 +221,7 @@ export default function Footer() {
           <div className="border-t border-gray-700 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div>
               <p className="text-gray-400 text-sm mb-1">
-                © {currentYear} PEUEPR. All Rights Reserved.
+                © {currentYear} PUEPR. All Rights Reserved.
               </p>
               <p className="text-gray-500 text-sm italic">
                 Grow smarter, Not harder
