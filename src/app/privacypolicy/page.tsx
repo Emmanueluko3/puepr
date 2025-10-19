@@ -33,9 +33,9 @@ export default function PrivacyPolicyPage() {
           </h2>
           <p className="font-clash">
             This Privacy Policy describes how{" "}
-            <strong>PROMISE UDUAK EKANEM PR (PUEPR)</strong> ("we", "us", "our")
-            collects, uses, and protects the personal data of users of our
-            website{" "}
+            <strong>PROMISE UDUAK EKANEM PR (PUEPR)</strong> (&quot;we&quot;,
+            &quot;us&quot;, &quot;our&quot;) collects, uses, and protects the
+            personal data of users of our website{" "}
             <Link
               href="https://www.puepr.com"
               className="text-blue-600 underline"

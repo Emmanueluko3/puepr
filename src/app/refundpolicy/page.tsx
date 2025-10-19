@@ -119,7 +119,7 @@ export default function RefundPolicyPage() {
               >
                 support@puepr.com
               </a>{" "}
-              with "Refund Request" in the subject line
+              with &quot;Refund Request&quot; in the subject line
             </li>
             <li>
               Provide your full name, contact information, and invoice/payment

@@ -33,7 +33,8 @@ export default function TermsPage() {
           </h2>
           <p className="font-clash">
             Welcome to <strong>PROMISE UDUAK EKANEM PR (PUEPR)</strong>. These
-            Terms and Conditions ("Terms") govern your use of our website{" "}
+            Terms and Conditions (&quot;Terms&quot;) govern your use of our
+            website{" "}
             <Link
               href="https://www.puepr.com"
               className="text-blue-600 underline"
@@ -56,19 +57,21 @@ export default function TermsPage() {
           </h2>
           <ul className="list-disc pl-6 space-y-1 font-clash">
             <li>
-              <strong>"We", "Us", "Our"</strong> refers to PROMISE UDUAK EKANEM
-              PR (PUEPR)
+              <strong>&quot;We&quot;, &quot;Us&quot;, &quot;Our&quot;</strong>{" "}
+              refers to PROMISE UDUAK EKANEM PR (PUEPR)
             </li>
             <li>
-              <strong>"You", "Your", "Client"</strong> refers to the person or
-              entity using our services
+              <strong>
+                &quot;You&quot;, &quot;Your&quot;, &quot;Client&quot;
+              </strong>{" "}
+              refers to the person or entity using our services
             </li>
             <li>
-              <strong>"Services"</strong> refers to all services provided by
-              PUEPR
+              <strong>&quot;Services&quot;</strong> refers to all services
+              provided by PUEPR
             </li>
             <li>
-              <strong>"Website"</strong> refers to www.puepr.com
+              <strong>&quot;Website&quot;</strong> refers to www.puepr.com
             </li>
           </ul>
         </div>
@@ -283,7 +286,8 @@ export default function TermsPage() {
           </h3>
           <ul className="list-disc pl-6 space-y-1 font-clash">
             <li>
-              Services are provided "as is" without warranties of any kind
+              Services are provided &quot;as is&quot; without warranties of any
+              kind
             </li>
             <li>
               We do not warrant that services will be uninterrupted or
@@ -356,7 +360,7 @@ export default function TermsPage() {
             <li>Use the website for any unlawful purpose</li>
             <li>Attempt to gain unauthorized access to our systems</li>
             <li>Transmit viruses or malicious code</li>
-            <li>Interfere with other users' use of the website</li>
+            <li>Interfere with other users use of the website</li>
             <li>Scrape or collect data from the website without permission</li>
           </ul>
 
