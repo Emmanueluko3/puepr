@@ -88,7 +88,7 @@ export default function TermsPage() {
           </p>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            3.1 Service Scope
+            3.1 Service scope
           </h3>
           <ul className="list-disc pl-6 space-y-1 font-clash">
             <li>
@@ -103,7 +103,7 @@ export default function TermsPage() {
           </ul>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            3.2 Service Delivery
+            3.2 Service delivery
           </h3>
           <ul className="list-disc pl-6 space-y-1 font-clash">
             <li>Service delivery timelines will be agreed upon in writing</li>
@@ -148,7 +148,7 @@ export default function TermsPage() {
           </ul>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            5.2 Payment Terms
+            5.2 Payment terms
           </h3>
           <ul className="list-disc pl-6 space-y-1 font-clash">
             <li>
@@ -185,7 +185,7 @@ export default function TermsPage() {
           </h2>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            6.1 Our Property
+            6.1 Our property
           </h3>
           <ul className="list-disc pl-6 space-y-1 font-clash">
             <li>
@@ -199,7 +199,7 @@ export default function TermsPage() {
           </ul>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            6.2 Client Materials
+            6.2 Client materials
           </h3>
           <ul className="list-disc pl-6 space-y-1 font-clash">
             <li>You retain ownership of the materials you provide to us</li>
@@ -228,7 +228,7 @@ export default function TermsPage() {
           </h2>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            7.1 Our Commitment
+            7.1 Our commitment
           </h3>
           <ul className="list-disc pl-6 space-y-1 font-clash">
             <li>We will keep your confidential information secure</li>
@@ -239,7 +239,7 @@ export default function TermsPage() {
           </ul>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            7.2 Your Commitment
+            7.2 Your commitment
           </h3>
           <ul className="list-disc pl-6 space-y-1 font-clash">
             <li>
@@ -257,7 +257,7 @@ export default function TermsPage() {
           </h2>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            8.1 Service Warranty
+            8.1 Service warranty
           </h3>
           <ul className="list-disc pl-6 space-y-1 font-clash">
             <li>We will provide services with reasonable skill and care</li>
@@ -265,7 +265,7 @@ export default function TermsPage() {
           </ul>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            8.2 Limitation of Liability
+            8.2 Limitation of liability
           </h3>
           <ul className="list-disc pl-6 space-y-1 font-clash">
             <li>
@@ -303,7 +303,7 @@ export default function TermsPage() {
           </h2>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            9.1 Termination by Either Party
+            9.1 Termination by either party
           </h3>
           <ul className="list-disc pl-6 space-y-1 font-clash">
             <li>
@@ -317,7 +317,7 @@ export default function TermsPage() {
           </ul>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            9.2 Termination for Breach
+            9.2 Termination for breach
           </h3>
           <ul className="list-disc pl-6 space-y-1 font-clash">
             <li>We may terminate immediately if you breach these Terms</li>
@@ -353,7 +353,7 @@ export default function TermsPage() {
           </h2>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            11.1 Acceptable Use
+            11.1 Acceptable use
           </h3>
           <p className="font-clash mb-2">You agree not to:</p>
           <ul className="list-disc pl-6 space-y-1 font-clash">
@@ -365,7 +365,7 @@ export default function TermsPage() {
           </ul>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            11.2 Links to Third-Party Websites
+            11.2 Links to third-party websites
           </h3>
           <ul className="list-disc pl-6 space-y-1 font-clash">
             <li>Our website may contain links to third-party websites</li>
@@ -417,7 +417,7 @@ export default function TermsPage() {
           </h2>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            14.1 Governing Law
+            14.1 Governing law
           </h3>
           <p className="font-clash">
             These Terms are governed by the laws of the Republic of Serbia.
@@ -448,7 +448,7 @@ export default function TermsPage() {
           </h2>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            15.1 Entire Agreement
+            15.1 Entire agreement
           </h3>
           <p className="font-clash">
             These Terms, together with any service agreements and our Privacy

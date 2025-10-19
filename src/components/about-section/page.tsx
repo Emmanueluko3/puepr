@@ -54,7 +54,7 @@ export default function HomePage() {
         className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden mb-12 lg:mb-20"
       >
         <Image
-          src="/images/about.jpg"
+          src="/images/about.JPG"
           alt="Team collaboration - hands joining together"
           fill
           className="object-cover"

@@ -86,7 +86,7 @@ export default function Hero() {
             Book your free consultation
           </Button>
           <Button
-            onClick={() => router.push("/contact")}
+            onClick={() => router.push("/services")}
             variant="secondary"
             size="md"
             className="w-full sm:w-auto px-6 py-2.5 font-medium"

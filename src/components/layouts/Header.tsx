@@ -101,9 +101,14 @@ export default function Header() {
     activeStyles.bg.includes("grey-custom") ||
     activeStyles.bg.includes("primary-custom") ||
     activeStyles.bg.includes("gray-900") ||
+    activeStyles.bg.includes("grey-900") ||
     activeStyles.bg.includes("grey-950") ||
     activeStyles.bg.includes("black") ||
     activeStyles.bg.includes("transparent");
+
+  const isBlueScreen =
+    activeStyles.bg.includes("primary-500") ||
+    activeStyles.bg.includes("primary-600");
 
   return (
     <header
@@ -117,7 +122,13 @@ export default function Header() {
           {/* Logo */}
           <Link href="/">
             <Image
-              src={isDarkSection ? SITE_CONFIG.logo : SITE_CONFIG.logo}
+              src={
+                isDarkSection
+                  ? isBlueScreen
+                    ? SITE_CONFIG.logoLight
+                    : SITE_CONFIG.logo
+                  : SITE_CONFIG.logo
+              }
               width={500}
               height={500}
               className="h-10 w-44 object-contain"

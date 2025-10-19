@@ -1,16 +1,13 @@
 "use client";
 import Image from "next/image";
+import { MapPin, Mail, Clock, MessageCircle } from "lucide-react";
 import {
-  Facebook,
-  Twitter,
+  X as TwitterX,
   Linkedin,
   Instagram,
-  MapPin,
-  Phone,
-  Mail,
-  Clock,
-  MessageCircle,
-} from "lucide-react";
+  Facebook,
+  Whatsapp,
+} from "iconoir-react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import Input from "@/components/ui/Input";
@@ -27,7 +24,12 @@ const contactInfo = [
 Beograd 11070, Serbia`,
     delay: 400,
   },
-  // { icon: Phone, title: "Phone", info: "+381 66 8735615", delay: 500 },
+  {
+    icon: Whatsapp,
+    title: "Whatsapp",
+    info: "+381637160315",
+    delay: 500,
+  },
   { icon: Mail, title: "Email", info: "info@puepr.com", delay: 600 },
   { icon: Clock, title: "Working Hours", info: "9:00 - 17:00", delay: 700 },
 ];
@@ -37,7 +39,7 @@ const socials = [
     href: "https://www.facebook.com/share/1BBXno86GW/?mibextid=wwXIfr",
     icon: Facebook,
   },
-  { href: "https://x.com/pueprconsulting?s=21", icon: Twitter },
+  { href: "https://x.com/pueprconsulting?s=21", icon: TwitterX },
   { href: "https://www.linkedin.com/company/puepr/", icon: Linkedin },
   {
     href: "https://www.instagram.com/pueprconsulting?igsh=MXJxcmg5MGh1bnhrcg==",
@@ -161,7 +163,7 @@ export default function ContactPage() {
         <Container className="grid gap-8 lg:grid-cols-2 lg:gap-12">
           <div className="relative h-[400px] md:h-[600px] w-full overflow-hidden rounded-3xl">
             <Image
-              src="/images/contact.jpg"
+              src="/images/contact.JPG"
               alt="Team collaboration"
               fill
               className="object-cover"

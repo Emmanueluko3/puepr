@@ -46,7 +46,7 @@ export default function RefundPolicyPage() {
           </h2>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            2.1 Service-based Refunds
+            2.1 Service-based refunds
           </h3>
           <p className="font-clash mb-2">
             As a service provider, our refund policy is based on the following
@@ -61,7 +61,7 @@ export default function RefundPolicyPage() {
           </ul>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            2.2 Eligibility for Refunds
+            2.2 Eligibility for refunds
           </h3>
           <p className="font-clash mb-2">
             You may be eligible for a refund under the following circumstances:
@@ -107,7 +107,7 @@ export default function RefundPolicyPage() {
           </h2>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            4.1 How to Request a Refund
+            4.1 How to request a refund
           </h3>
           <p className="font-clash mb-2">To request a refund, you must:</p>
           <ul className="list-disc pl-6 space-y-1 font-clash">
@@ -144,7 +144,7 @@ export default function RefundPolicyPage() {
           </ul>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            4.3 Response Time
+            4.3 Response time
           </h3>
           <ul className="list-disc pl-6 space-y-1 font-clash">
             <li>
@@ -209,7 +209,7 @@ export default function RefundPolicyPage() {
           </h2>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            7.1 Refund Methods
+            7.1 Refund methods
           </h3>
           <p className="font-clash mb-2">
             Approved refunds will be processed using the original payment
@@ -224,7 +224,7 @@ export default function RefundPolicyPage() {
           </ul>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            7.2 Processing Time
+            7.2 Processing time
           </h3>
           <ul className="list-disc pl-6 space-y-1 font-clash">
             <li>
@@ -240,7 +240,7 @@ export default function RefundPolicyPage() {
           </ul>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            7.3 Transaction Fees
+            7.3 Transaction fees
           </h3>
           <ul className="list-disc pl-6 space-y-1 font-clash">
             <li>
@@ -261,7 +261,7 @@ export default function RefundPolicyPage() {
           </h2>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            8.1 Cancellation Before Service Commencement
+            8.1 Cancellation before service commencement
           </h3>
           <ul className="list-disc pl-6 space-y-1 font-clash">
             <li>
@@ -275,7 +275,7 @@ export default function RefundPolicyPage() {
           </ul>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            8.2 Cancellation After Service Commencement
+            8.2 Cancellation after service commencement
           </h3>
           <ul className="list-disc pl-6 space-y-1 font-clash">
             <li>
@@ -311,7 +311,7 @@ export default function RefundPolicyPage() {
           </h2>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            9.1 Communication First
+            9.1 Communication first
           </h3>
           <p className="font-clash mb-2">
             We encourage open communication to resolve any dissatisfaction:
@@ -349,7 +349,7 @@ export default function RefundPolicyPage() {
           </h2>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            10.1 Force Majeure
+            10.1 Force majeure
           </h3>
           <p className="font-clash mb-2">
             No refunds will be issued for delays or non-performance due to
@@ -363,7 +363,7 @@ export default function RefundPolicyPage() {
           </ul>
 
           <h3 className="text-xl font-semibold font-oswald text-gray-800 mt-4 mb-2">
-            10.2 Client-caused Delays
+            10.2 Client-caused delays
           </h3>
           <p className="font-clash mb-2">
             Refunds will not be issued when delays or service failures are
@@ -431,9 +431,13 @@ export default function RefundPolicyPage() {
               </a>
             </p>
             <p>
-              <strong>Phone:</strong>
-              <a href="tel:+381658241323" className="text-blue-600 underline">
-                +381658241323
+              <strong>Whatsapp:</strong>
+              <a
+                href="https://wa.me/381637160315"
+                target="_blank"
+                className="text-blue-600 underline"
+              >
+                +381637160315
               </a>
             </p>
             <p>
@@ -441,7 +445,7 @@ export default function RefundPolicyPage() {
               Milankovica Blvd 9ž Beograd Beograd-Beograd, 11070, Serbia
             </p>
             <p>
-              <strong>Business Hours:</strong> Monday-Friday, 9:00 - 17:00
+              <strong>Business hours:</strong> Monday-Friday, 9:00 - 17:00
             </p>
           </div>
         </div>

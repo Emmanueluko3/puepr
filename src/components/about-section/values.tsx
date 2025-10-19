@@ -36,7 +36,7 @@ const team = [
   {
     name: "Harrison, M",
     role: "COO",
-    image: "/images/Harrison-M.jpg",
+    image: "/images/HARRISON-M.jpg",
     delay: 100,
   },
   {
