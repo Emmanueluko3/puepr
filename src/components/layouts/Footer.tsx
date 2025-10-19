@@ -45,7 +45,7 @@ export default function Footer() {
                 src={SITE_CONFIG.logoLight}
                 width={500}
                 height={500}
-                className="h-12 w-fit"
+                className="md:h-12 h-7 w-fit"
                 alt={SITE_CONFIG.name}
               />
             </Link>
@@ -207,7 +207,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <h4 className="text-white font-semibold mb-1">
-                    PUEPR Head Quarters
+                    PUEPR head quarters
                   </h4>
                   <p className="text-gray-400">
                     Milutina Milankovica Blvd 9ž Beograd 11070, Serbia

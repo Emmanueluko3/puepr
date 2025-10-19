@@ -19,19 +19,13 @@ import { Container } from "@/components/ui/Container";
 const contactInfo = [
   {
     icon: MapPin,
-    title: "PUEPR Head Quarters",
+    title: "PUEPR head quarters",
     info: `Milutina Milankovica Blvd 9ž
 Beograd 11070, Serbia`,
     delay: 400,
   },
-  {
-    icon: Whatsapp,
-    title: "Whatsapp",
-    info: "+381637160315",
-    delay: 500,
-  },
   { icon: Mail, title: "Email", info: "info@puepr.com", delay: 600 },
-  { icon: Clock, title: "Working Hours", info: "9:00 - 17:00", delay: 700 },
+  { icon: Clock, title: "Working hours", info: "9:00 - 17:00", delay: 700 },
 ];
 
 const socials = [
@@ -44,6 +38,10 @@ const socials = [
   {
     href: "https://www.instagram.com/pueprconsulting?igsh=MXJxcmg5MGh1bnhrcg==",
     icon: Instagram,
+  },
+  {
+    href: "https://wa.me/381637160315",
+    icon: Whatsapp,
   },
   {
     href: "https://connect.viber.com/business/57c286bc-abfa-11f0-ab4e-ba164ec54561",
@@ -100,7 +98,7 @@ export default function ContactPage() {
 
           {/* Social Icons */}
           <div
-            className="mb-16 flex justify-center gap-4"
+            className="mb-16 flex justify-center flex-wrap gap-4"
             data-aos="zoom-in"
             data-aos-duration="800"
             data-aos-delay="300"
@@ -249,7 +247,7 @@ export default function ContactPage() {
                   type="submit"
                   className="w-full rounded-full px-8 py-4 text-lg font-semibold font-clash text-white transition-all hover:bg-blue-700 hover:shadow-lg"
                 >
-                  Send Your Message
+                  Send your message
                 </Button>
               </Form>
             </Formik>
