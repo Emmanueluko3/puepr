@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { MapPin, Mail, Clock, MessageCircle } from "lucide-react";
+import { MapPin, Mail, Clock, MessageCircle, Send } from "lucide-react";
 import {
   X as TwitterX,
   Linkedin,
@@ -8,13 +8,16 @@ import {
   Facebook,
   Whatsapp,
 } from "iconoir-react";
-import { Formik, Form } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Input from "@/components/ui/Input";
 import Select from "@/components/ui/Select";
 import { Button } from "@/components/ui/Button";
 import { CTASection } from "@/components/home-sections/CTA";
 import { Container } from "@/components/ui/Container";
+import toast from "react-hot-toast";
+import { CustomToast } from "@/components/CustomToast";
+import { useState } from "react";
 
 const contactInfo = [
   {
@@ -50,7 +53,14 @@ const socials = [
 ];
 
 const serviceOptions = [
-  { value: "consulting", title: "Business Consulting" },
+  {
+    value: "consulting",
+    title: "Business Consulting",
+    children: [
+      { value: "market-research", title: "Market Research" },
+      { value: "business-plan", title: "Business Plan" },
+    ],
+  },
   { value: "strategy", title: "Strategy Development" },
   { value: "management", title: "Project Management" },
   { value: "automation", title: "Automation & Tech" },
@@ -66,6 +76,8 @@ const validationSchema = Yup.object({
 });
 
 export default function ContactPage() {
+  const [loading, setLoading] = useState(false);
+
   return (
     <div className="bg-white">
       {/* Hero Section */}
@@ -179,9 +191,41 @@ export default function ContactPage() {
                 message: "",
               }}
               validationSchema={validationSchema}
-              onSubmit={(values) => {
-                console.log(values);
-                alert("Message sent successfully!");
+              onSubmit={async (values, { resetForm }) => {
+                setLoading(true);
+
+                try {
+                  const res = await fetch("/api/contact", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(values),
+                  });
+
+                  const data = await res.json();
+
+                  if (data.success) {
+                    toast.custom(() => (
+                      <CustomToast
+                        title="Message sent!"
+                        message="Thanks for reaching out, we'll get back to you shortly."
+                        icon={
+                          <Send
+                            size={24}
+                            strokeWidth={2.5}
+                            className="text-primary-500"
+                          />
+                        }
+                      />
+                    ));
+                    resetForm();
+                  } else {
+                    toast.error("Something went wrong.");
+                  }
+                } catch (err) {
+                  toast.error("Network error.");
+                }
+
+                setLoading(false);
               }}
             >
               <Form className="space-y-6 font-clash">
@@ -234,17 +278,24 @@ export default function ContactPage() {
                   >
                     Message
                   </label>
-                  <textarea
+                  <Field
+                    as="textarea"
                     id="message"
                     name="message"
                     rows={6}
                     placeholder="Write your message here"
                     className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm mt-3 font-clash text-black placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
                   />
+                  <ErrorMessage
+                    name="message"
+                    component="div"
+                    className="mt-1 text-sm text-red-600"
+                  />
                 </div>
 
                 <Button
                   type="submit"
+                  loading={loading}
                   className="w-full rounded-full px-8 py-4 text-lg font-semibold font-clash text-white transition-all hover:bg-blue-700 hover:shadow-lg"
                 >
                   Send your message
