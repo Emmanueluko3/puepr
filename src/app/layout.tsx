@@ -7,6 +7,7 @@ import { AOSInit } from "@/components/utilityComps/AOSInit";
 import { Providers } from "@/providers";
 import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
+import { ScrollToTop } from "@/components/utilityComps/ScrollToTop";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -96,8 +97,8 @@ export default function RootLayout({
         <Providers>
           <AOSInit />
           <Header />
-
           {children}
+          <ScrollToTop />
           <Footer />
         </Providers>
       </body>

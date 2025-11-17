@@ -64,24 +64,34 @@ export default function Footer() {
             </div>
 
             {/* Newsletter Input */}
-            <div className="relative lg:min-w-[500px]">
-              <Image
-                src={"/logos/sms.png"}
-                alt="sms"
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 z-10"
-                width={20}
-                height={20}
-              />
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email address"
-                className="w-full bg-[#2a2a2a] border border-gray-700 rounded-full py-3 px-12 pr-40 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500"
-              />
+            <div className="relative lg:min-w-[500px] w-full">
+              <div className="relative">
+                <Image
+                  src={"/logos/sms.png"}
+                  alt="sms"
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 z-10"
+                  width={20}
+                  height={20}
+                />
+
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email address"
+                  className="w-full bg-[#2a2a2a] border border-gray-700 rounded-full py-3 px-12 
+      md:pr-40 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500"
+                />
+              </div>
+
+              {/* FIX: Make button full width on mobile, absolute only on large screens */}
               <Button
                 onClick={handleSubscribe}
-                className="absolute right-1 top-1/2 transform -translate-y-1/2  text-white px-6 py-2 rounded-full font-medium transition-colors whitespace-nowrap"
+                className="
+      mt-3 w-full md:w-auto md:mt-0
+      md:absolute md:right-1 md:top-1/2 md:-translate-y-1/2
+      text-white px-6 py-2 rounded-full font-medium transition-colors whitespace-nowrap
+    "
               >
                 Subscribe Now
               </Button>

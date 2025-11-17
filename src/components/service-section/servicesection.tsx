@@ -70,12 +70,12 @@ const sections = [
         description:
           "Our virtual assistance services provide businesses with reliable and efficient office support that keeps operations running smoothly. From email and calendar management to data entry, research, and customer service, we handle administrative tasks so you can focus on core business activities.",
       },
-      {
-        icon: FileSignature,
-        title: "Business registration",
-        description:
-          "We simplify the process of establishing businesses by assisting with company registration in Serbia and Montenegro. Our streamlined services navigate local requirements and paperwork, making it easy to establish your legal business presence and start operations with confidence.",
-      },
+      // {
+      //   icon: FileSignature,
+      //   title: "Business registration",
+      //   description:
+      //     "We simplify the process of establishing businesses by assisting with company registration in Serbia and Montenegro. Our streamlined services navigate local requirements and paperwork, making it easy to establish your legal business presence and start operations with confidence.",
+      // },
     ],
     className: "font-clash",
     withCTA: true,
