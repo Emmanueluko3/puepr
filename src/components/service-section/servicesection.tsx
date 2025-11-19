@@ -7,7 +7,6 @@ import {
   Palette,
   Target,
   Headphones,
-  FileSignature,
 } from "lucide-react";
 import { CTASection } from "../home-sections/CTA";
 

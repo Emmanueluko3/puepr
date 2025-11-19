@@ -2,11 +2,8 @@
 
 import Image from "next/image";
 import { Container } from "../ui/Container";
-import { useRouter } from "next/navigation";
 
 export default function Hero() {
-  const router = useRouter();
-
   return (
     <section
       id="hero"

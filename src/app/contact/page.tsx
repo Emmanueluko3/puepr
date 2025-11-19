@@ -233,6 +233,7 @@ export default function ContactPage() {
                   }
                 } catch (err) {
                   toast.error("Network error.");
+                  console.error(err)
                 }
 
                 setLoading(false);

@@ -26,6 +26,15 @@ type SelectProps = {
   returnValue?: "value" | "label";
 };
 
+// Flattened type for matching parent + child options
+type FlatOption =
+  | (SelectOption & { parent?: undefined })
+  | {
+      value: string;
+      title: string;
+      parent: SelectOption;
+    };
+
 export default function Select({
   icon,
   label,
@@ -49,20 +58,27 @@ export default function Select({
 
   const effectiveValue = value !== undefined ? value : field.value;
 
-  // 🔥 Find selected parent OR child
+  // FLATTEN OPTIONS
+  const flattened: FlatOption[] = options.flatMap((option) => {
+    const children =
+      option.children?.map((c) => ({
+        value: c.value,
+        title: c.title,
+        parent: option,
+      })) || [];
+
+    return [{ ...option, parent: undefined }, ...children];
+  });
+
   const selectedOption =
-    options
-      .flatMap((option) => [
-        option,
-        ...(option.children?.map((c) => ({ ...c, parent: option })) || []),
-      ])
-      .find(
-        (opt: any) =>
-          opt[returnValue === "label" ? "title" : "value"] === effectiveValue
-      ) || null;
+    flattened.find((opt) => {
+      const key = returnValue === "label" ? "title" : "value";
+      return opt[key] === effectiveValue;
+    }) || null;
 
   const listboxId = `${name}-listbox`;
 
+  // Close when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -73,6 +89,7 @@ export default function Select({
         setOpenChild(null);
       }
     };
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
@@ -80,25 +97,25 @@ export default function Select({
   const handleParentClick = (option: SelectOption) => {
     if (option.disabled) return;
 
-    // If parent has children, toggle child dropdown
     if (option.children && option.children.length > 0) {
       setOpenChild(openChild === option.value ? null : option.value);
       return;
     }
 
-    // If no children → close everything
     setIsOpen(false);
 
-    const returnVal = returnValue === "label" ? option.title : option.value;
+    const returnVal = (
+      returnValue === "label" ? option.title : option.value
+    ) as string;
+
     helpers.setValue(returnVal);
     onChange?.(returnVal);
   };
 
   const handleChildClick = (child: { value: string; title: string }) => {
-    helpers.setValue(child.value);
+    helpers.setValue(child.value as string);
     onChange?.(child.value);
 
-    // Close dropdown + child menu
     setOpenChild(null);
     setIsOpen(false);
   };
@@ -184,7 +201,6 @@ export default function Select({
                 <div className="font-clash font-medium text-sm flex justify-between items-center">
                   {option.title}
 
-                  {/* 🔽 Only show caret if children exist */}
                   {option.children && option.children.length > 0 && (
                     <svg
                       className={clsx(
@@ -212,7 +228,7 @@ export default function Select({
                 )}
               </div>
 
-              {/* 🔥 CHILD DROPDOWN (only visible when parent is open) */}
+              {/* CHILD DROPDOWN */}
               {openChild === option.value && option.children && (
                 <div className="ml-4 border-l border-gray-200">
                   {option.children.map((child) => (
