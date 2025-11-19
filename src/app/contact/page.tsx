@@ -54,16 +54,26 @@ const socials = [
 
 const serviceOptions = [
   {
-    value: "consulting",
-    title: "Business Consulting",
+    value: "core-services",
+    title: "Core Services",
     children: [
-      { value: "market-research", title: "Market Research" },
-      { value: "business-plan", title: "Business Plan" },
+      { value: "web-development", title: "Web Development" },
+      {
+        value: "business-process-automation",
+        title: "Business Process Automation",
+      },
+      { value: "project-management", title: "Project Management" },
+      { value: "rebranding-services", title: "Rebranding Services" },
+      { value: "lead-generation", title: "Lead Generation" },
     ],
   },
-  { value: "strategy", title: "Strategy Development" },
-  { value: "management", title: "Project Management" },
-  { value: "automation", title: "Automation & Tech" },
+  {
+    value: "specialized-services",
+    title: "Specialized Services",
+    children: [
+      { value: "administrative-support", title: "Administrative Support" },
+    ],
+  },
 ];
 
 const validationSchema = Yup.object({
