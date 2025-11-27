@@ -183,7 +183,7 @@ export default function ContactPage() {
         <Container className="grid gap-8 lg:grid-cols-2 lg:gap-12">
           <div className="relative h-[400px] md:h-[600px] w-full overflow-hidden rounded-3xl">
             <Image
-              src="/images/contact.JPG"
+              src="/images/contact.jpg"
               alt="Team collaboration"
               fill
               className="object-cover"
@@ -233,7 +233,7 @@ export default function ContactPage() {
                   }
                 } catch (err) {
                   toast.error("Network error.");
-                  console.error(err)
+                  console.error(err);
                 }
 
                 setLoading(false);
