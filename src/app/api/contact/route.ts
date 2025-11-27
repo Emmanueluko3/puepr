@@ -17,8 +17,8 @@ export async function POST(req: Request) {
       },
     });
 
-    // ---- EMAIL TEMPLATE ----
-    const htmlTemplate = `
+    // ---- EMAIL TEMPLATE (Reusable) ----
+    const getEmailTemplate = (isInternal: boolean) => `
 <div style="margin:0; padding:0; background:#f4f4f4; width:100%; font-family:Arial, sans-serif;">
   <div style="max-width:700px; margin:0 auto; background:#ffffff;">
 
@@ -35,18 +35,25 @@ export async function POST(req: Request) {
     <div style="padding:40px;">
 
       <h2 style="text-align:center; font-size:24px; font-weight:bold; margin-bottom:20px;">
-        Thank you for contacting PUEPR!
+        ${
+          isInternal
+            ? "New Contact Form Submission"
+            : "Thank you for contacting PUEPR!"
+        }
       </h2>
 
-      <p>Dear ${firstName} ${lastName},</p>
+      <p>Dear ${isInternal ? "PUEPR Team" : firstName + " " + lastName},</p>
 
       <p>
-        Thank you for reaching out to PUEPR Consulting regarding 
-        <strong>${services}</strong>.  
-        We have successfully received your inquiry and appreciate your interest in our services.
+        ${
+          isInternal
+            ? "A new contact form submission has been received on your website."
+            : `Thank you for reaching out to PUEPR Consulting regarding 
+            <strong>${services}</strong>. We have successfully received your inquiry and appreciate your interest in our services.`
+        }
       </p>
 
-      <h3 style="margin-top:30px; font-size:18px;">Your Inquiry Details:</h3>
+      <h3 style="margin-top:30px; font-size:18px;">Inquiry Details:</h3>
 
       <p><strong>Name:</strong> ${firstName} ${lastName}</p>
       <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
@@ -54,14 +61,21 @@ export async function POST(req: Request) {
       <p><strong>Service:</strong> ${services}</p>
       <p><strong>Message:</strong> ${message}</p>
 
-      <h3 style="margin-top:30px; font-size:18px;">What happens next?</h3>
+      <h3 style="margin-top:30px; font-size:18px;">
+        ${isInternal ? "Action Required:" : "What happens next?"}
+      </h3>
 
       <p>
-        Our team will review your inquiry and respond within 24–48 business hours.  
-        A member of our consulting team will contact you directly to discuss your 
-        specific needs and how we can best assist you.
+        ${
+          isInternal
+            ? "Please review this inquiry and respond to the client within 24–48 business hours."
+            : "Our team will review your inquiry and respond within 24–48 business hours. A member of our consulting team will contact you directly to discuss your specific needs and how we can best assist you."
+        }
       </p>
 
+      ${
+        !isInternal
+          ? `
       <p>If you have urgent questions, feel free to contact us:</p>
 
       <p><strong>Email:</strong> info@puepr.com</p>
@@ -70,6 +84,9 @@ export async function POST(req: Request) {
       <p style="margin-top:20px;">
         We look forward to working with you and helping your business grow.
       </p>
+      `
+          : ""
+      }
 
       <p>Best regards,<br />PUEPR Consulting Team</p>
     </div>
@@ -93,22 +110,36 @@ export async function POST(req: Request) {
         PUEPR Consulting • Headquarters, Belgrade, Serbia
       </p>
 
+      ${
+        !isInternal
+          ? `
       <p style="font-size:12px; color:#999;">
         No longer want to receive these emails? 
         <a href="#" style="color:#0009a8;">Unsubscribe</a>
       </p>
+      `
+          : ""
+      }
     </div>
 
   </div>
 </div>
 `;
 
-    // ---- SEND EMAIL ----
+    // ---- SEND CLIENT EMAIL ----
     await transporter.sendMail({
       from: `"PUEPR Consulting" <${process.env.EMAIL_USER}>`,
       to: email,
       subject: "Thank you for contacting PUEPR!",
-      html: htmlTemplate,
+      html: getEmailTemplate(false),
+    });
+
+    // ---- SEND INTERNAL EMAIL ----
+    await transporter.sendMail({
+      from: process.env.INTERNAL_EMAIL,
+      to: process.env.INTERNAL_EMAIL, // Add this to your .env
+      subject: "New Contact Form Submission",
+      html: getEmailTemplate(true),
     });
 
     return NextResponse.json({ success: true });
