@@ -6,12 +6,14 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { firstName, lastName, email, phone, services, message } = body;
 
-    // Transporter
+    // ✅ FIXED TRANSPORTER FOR CPANEL
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "mail.puepr.com", // IMPORTANT
+      port: 465,
+      secure: true,
       auth: {
-        user: process.env.EMAIL_USER, // your gmail
-        pass: process.env.EMAIL_PASS, // gmail app password
+        user: process.env.EMAIL_USER, // info@puepr.com
+        pass: process.env.EMAIL_PASS, // your real cpanel email password
       },
     });
 
@@ -21,8 +23,8 @@ export async function POST(req: Request) {
   <div style="max-width:700px; margin:0 auto; background:#ffffff;">
 
     <!-- Top Blue Header -->
-    <div style="background:#0A3D8F; padding:20px;">
-      <img src="https://i.ibb.co/8KbJt6B/puepr-logo.png" alt="PUEPR Logo" style="height:40px;">
+    <div style="background:#0009a8; padding:20px;">
+      <img src="https://www.puepr.com/logos/logo-light.png" alt="PUEPR Logo" style="height:40px;">
     </div>
 
     <!-- Image -->
@@ -93,7 +95,7 @@ export async function POST(req: Request) {
 
       <p style="font-size:12px; color:#999;">
         No longer want to receive these emails? 
-        <a href="#" style="color:#0A3D8F;">Unsubscribe</a>
+        <a href="#" style="color:#0009a8;">Unsubscribe</a>
       </p>
     </div>
 
@@ -101,22 +103,19 @@ export async function POST(req: Request) {
 </div>
 `;
 
-    // Send email
+    // ---- SEND EMAIL ----
     await transporter.sendMail({
-      from: '"PUEPR Consulting" <info@puepr.com>',
+      from: `"PUEPR Consulting" <${process.env.EMAIL_USER}>`,
       to: email,
       subject: "Thank you for contacting PUEPR!",
       html: htmlTemplate,
     });
 
     return NextResponse.json({ success: true });
-  } catch (error) {
+  } catch (error: any) {
     console.error("Email sending error:", error);
     return NextResponse.json(
-      {
-        success: false,
-        error: error instanceof Error ? error.message : "Failed to send email",
-      },
+      { success: false, error: error.message },
       { status: 500 }
     );
   }
