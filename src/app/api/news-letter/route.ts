@@ -4,16 +4,24 @@ import nodemailer from "nodemailer";
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { firstName, lastName, email, phone, services, message } = body;
+    const { email } = body;
 
-    // ✅ FIXED TRANSPORTER FOR CPANEL
+    // Validate email
+    if (!email || !email.includes("@")) {
+      return NextResponse.json(
+        { success: false, error: "Invalid email address" },
+        { status: 400 }
+      );
+    }
+
+    // ✅ CPANEL EMAIL TRANSPORTER
     const transporter = nodemailer.createTransport({
-      host: "mail.puepr.com", // IMPORTANT
+      host: "mail.puepr.com",
       port: 465,
       secure: true,
       auth: {
-        user: process.env.EMAIL_USER, // info@puepr.com
-        pass: process.env.EMAIL_PASS, // your real cpanel email password
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
@@ -28,7 +36,7 @@ export async function POST(req: Request) {
     </div>
 
     <!-- Image -->
-    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1470" 
+    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1470" 
          style="width:100%; height:auto; display:block;" />
 
     <!-- Content Wrapper -->
@@ -37,58 +45,51 @@ export async function POST(req: Request) {
       <h2 style="text-align:center; font-size:24px; font-weight:bold; margin-bottom:20px;">
         ${
           isInternal
-            ? "New Contact Form Submission"
-            : "Thank you for contacting PUEPR!"
+            ? "New Newsletter Subscriber"
+            : "Welcome to PUEPR Newsletter!"
         }
       </h2>
 
-      <p>Dear ${isInternal ? "PUEPR Team" : firstName + " " + lastName},</p>
+      <p>Dear ${isInternal ? "PUEPR Team" : "Subscriber"},</p>
 
       <p>
         ${
           isInternal
-            ? "A new contact form submission has been received on your website."
-            : `Thank you for reaching out to PUEPR Consulting regarding 
-            <strong>${services}</strong>. We have successfully received your inquiry and appreciate your interest in our services.`
-        }
-      </p>
-
-      <h3 style="margin-top:30px; font-size:18px;">Inquiry Details:</h3>
-
-      <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-      <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-      <p><strong>Phone:</strong> ${phone}</p>
-      <p><strong>Service:</strong> ${services}</p>
-      <p><strong>Message:</strong> ${message}</p>
-
-      <h3 style="margin-top:30px; font-size:18px;">
-        ${isInternal ? "Action Required:" : "What happens next?"}
-      </h3>
-
-      <p>
-        ${
-          isInternal
-            ? "Please review this inquiry and respond to the client within 24–48 business hours."
-            : "Our team will review your inquiry and respond within 24–48 business hours. A member of our consulting team will contact you directly to discuss your specific needs and how we can best assist you."
+            ? `A new subscriber has joined your newsletter list.`
+            : `Thank you for subscribing to the PUEPR Consulting newsletter! We're excited to have you on board.`
         }
       </p>
 
       ${
-        !isInternal
+        isInternal
           ? `
-      <p>If you have urgent questions, feel free to contact us:</p>
-
-      <p><strong>Email:</strong> info@puepr.com</p>
-      <p><strong>Phone:</strong> +381 63 7160315</p>
+      <h3 style="margin-top:30px; font-size:18px;">Subscriber Information:</h3>
+      <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+      <p><strong>Subscription Date:</strong> ${new Date().toLocaleString()}</p>
+      `
+          : `
+      <h3 style="margin-top:30px; font-size:18px;">What to Expect:</h3>
+      <p>You'll receive:</p>
+      <p style="margin-left:20px;">
+        • Industry insights and best practices<br />
+        • Updates on PUEPR's latest projects and services<br />
+        • Exclusive tips for business growth<br />
+        • Special announcements and offers
+      </p>
 
       <p style="margin-top:20px;">
-        We look forward to working with you and helping your business grow.
+        We respect your inbox and will only send you valuable, relevant content. Expect to hear from us once or twice per month.
       </p>
+
+      <p style="margin-top:20px;">
+        For questions or support, contact us:
+      </p>
+      <p><strong>Email:</strong> info@puepr.com</p>
+      <p><strong>Phone:</strong> +381 63 7160315</p>
       `
-          : ""
       }
 
-      <p>Best regards,<br />PUEPR Consulting Team</p>
+      <p style="margin-top:30px;">Best regards,<br />PUEPR Consulting Team</p>
     </div>
 
     <!-- Social Footer -->
@@ -116,29 +117,29 @@ export async function POST(req: Request) {
 </div>
 `;
 
-    // ---- SEND CLIENT EMAIL ----
+    // ---- SEND CONFIRMATION EMAIL TO SUBSCRIBER ----
     await transporter.sendMail({
       from: `"PUEPR Consulting" <${process.env.EMAIL_USER}>`,
       to: email,
-      subject: "Thank you for contacting PUEPR!",
+      subject: "Welcome to PUEPR Newsletter!",
       html: getEmailTemplate(false),
     });
 
-    // ---- SEND INTERNAL EMAIL ----
+    // ---- SEND INTERNAL NOTIFICATION EMAIL ----
     await transporter.sendMail({
       from: process.env.INTERNAL_EMAIL,
-      to: process.env.INTERNAL_EMAIL, // Add this to your .env
-      subject: "New Contact Form Submission",
+      to: process.env.INTERNAL_EMAIL,
+      subject: "New Newsletter Subscriber",
       html: getEmailTemplate(true),
     });
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Email sending error:", error);
+    console.error("Newsletter subscription error:", error);
     return NextResponse.json(
       {
         success: false,
-        error: error instanceof Error ? error.message : "Failed to send email",
+        error: error instanceof Error ? error.message : "Failed to subscribe",
       },
       { status: 500 }
     );

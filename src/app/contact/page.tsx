@@ -55,23 +55,23 @@ const socials = [
 const serviceOptions = [
   {
     value: "core-services",
-    title: "Core Services",
+    title: "Core services",
     children: [
-      { value: "web-development", title: "Web Development" },
+      { value: "web-development", title: "Web development" },
       {
         value: "business-process-automation",
-        title: "Business Process Automation",
+        title: "Business process automation",
       },
-      { value: "project-management", title: "Project Management" },
-      { value: "rebranding-services", title: "Rebranding Services" },
-      { value: "lead-generation", title: "Lead Generation" },
+      { value: "project-management", title: "Project management" },
+      { value: "rebranding-services", title: "Rebranding services" },
+      { value: "lead-generation", title: "Lead generation" },
     ],
   },
   {
     value: "specialized-services",
-    title: "Specialized Services",
+    title: "Specialized services",
     children: [
-      { value: "administrative-support", title: "Administrative Support" },
+      { value: "administrative-support", title: "Administrative support" },
     ],
   },
 ];

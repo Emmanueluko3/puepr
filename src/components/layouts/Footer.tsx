@@ -16,14 +16,84 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/Button";
 import { useState } from "react";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, CheckCircle, AlertCircle } from "lucide-react";
+import toast from "react-hot-toast";
+import { CustomToast } from "@/components/CustomToast";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSubscribe = () => {
-    // Handle subscription logic
-    console.log("Subscribe:", email);
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!email || !email.includes("@")) {
+      toast.custom(() => (
+        <CustomToast
+          title="Invalid email"
+          message="Please enter a valid email address."
+          icon={
+            <AlertCircle size={24} strokeWidth={2.5} className="text-red-500" />
+          }
+        />
+      ));
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/news-letter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast.custom(() => (
+          <CustomToast
+            title="Subscribed!"
+            message="Thanks for subscribing! Check your email for a welcome message."
+            icon={
+              <CheckCircle
+                size={24}
+                strokeWidth={2.5}
+                className="text-green-500"
+              />
+            }
+          />
+        ));
+        setEmail("");
+      } else {
+        toast.custom(() => (
+          <CustomToast
+            title="Subscription failed"
+            message={data.error || "Failed to subscribe. Please try again."}
+            icon={
+              <AlertCircle
+                size={24}
+                strokeWidth={2.5}
+                className="text-red-500"
+              />
+            }
+          />
+        ));
+      }
+    } catch (error) {
+      toast.custom(() => (
+        <CustomToast
+          title="Error"
+          message="Something went wrong. Please try again later."
+          icon={
+            <AlertCircle size={24} strokeWidth={2.5} className="text-red-500" />
+          }
+        />
+      ));
+    } finally {
+      setLoading(false);
+    }
   };
 
   const currentYear = new Date().getFullYear();
@@ -63,8 +133,11 @@ export default function Footer() {
               </p>
             </div>
 
-            {/* Newsletter Input */}
-            <div className="relative lg:min-w-[500px] w-full">
+            {/* Newsletter Form */}
+            <form
+              onSubmit={handleSubscribe}
+              className="relative lg:min-w-[500px] w-full"
+            >
               <div className="relative">
                 <Image
                   src={"/logos/sms.png"}
@@ -79,23 +152,28 @@ export default function Footer() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
+                  disabled={loading}
                   className="w-full bg-[#2a2a2a] border border-gray-700 rounded-full py-3 px-12 
-      md:pr-40 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500"
+                    md:pr-40 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500
+                    disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 />
               </div>
 
-              {/* FIX: Make button full width on mobile, absolute only on large screens */}
+              {/* Subscribe Button */}
               <Button
-                onClick={handleSubscribe}
+                type="submit"
+                disabled={loading}
+                loading={loading}
                 className="
-      mt-3 w-full md:w-auto md:mt-0
-      md:absolute md:right-1 md:top-1/2 md:-translate-y-1/2
-      text-white px-6 py-2 rounded-full font-medium transition-colors whitespace-nowrap
-    "
+                  mt-3 w-full md:w-auto md:mt-0
+                  md:absolute md:right-1 md:top-1/2 md:-translate-y-1/2
+                  text-white px-6 py-2 rounded-full font-medium transition-colors whitespace-nowrap
+                  disabled:opacity-50 disabled:cursor-not-allowed
+                "
               >
-                Subscribe Now
+                Subscribe now
               </Button>
-            </div>
+            </form>
           </div>
         </div>
 
