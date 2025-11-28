@@ -32,15 +32,16 @@ export async function POST(req: Request) {
 
     <!-- Top Blue Header -->
     <div style="background:#0009a8; padding:20px;">
-      <img src="https://www.puepr.com/logos/logo-light.png" alt="PUEPR Logo" style="height:40px;">
+      <img src="https://www.puepr.com/logos/logo-light.png" alt="PUEPR Logo" style="height:40px; display:block;">
     </div>
 
-    <!-- Image -->
+    <!-- Image - Responsive for Mobile -->
     <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1470" 
-         style="width:100%; height:auto; display:block;" />
+         style="width:100%; height:auto; display:block; max-width:700px; object-fit:cover;" 
+         alt="Newsletter Header" />
 
     <!-- Content Wrapper -->
-    <div style="padding:40px;">
+    <div style="padding:40px; box-sizing:border-box;">
 
       <h2 style="text-align:center; font-size:24px; font-weight:bold; margin-bottom:20px;">
         ${
@@ -56,7 +57,7 @@ export async function POST(req: Request) {
         ${
           isInternal
             ? `A new subscriber has joined your newsletter list.`
-            : `Thank you for subscribing to the PUEPR Consulting newsletter! We're excited to have you on board.`
+            : `Thank you for subscribing to the PUEPR newsletter! We're excited to have you on board.`
         }
       </p>
 
@@ -89,26 +90,26 @@ export async function POST(req: Request) {
       `
       }
 
-      <p style="margin-top:30px;">Best regards,<br />PUEPR Consulting Team</p>
+      <p style="margin-top:30px;">Best regards,<br />PUEPR Team</p>
     </div>
 
     <!-- Social Footer -->
     <div style="text-align:center; padding-bottom:20px;">
       <a href="https://facebook.com/pueprconsulting" style="margin:0 6px;">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="24">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="24" alt="Facebook">
       </a>
       <a href="https://x.com/pueprconsulting" style="margin:0 6px;">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" width="24">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" width="24" alt="X">
       </a>
       <a href="https://linkedin.com/company/puepr" style="margin:0 6px;">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="24">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="24" alt="LinkedIn">
       </a>
       <a href="https://instagram.com/pueprconsulting" style="margin:0 6px;">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" width="24">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" width="24" alt="Instagram">
       </a>
 
       <p style="font-size:13px; color:#777; margin-top:15px;">
-        PUEPR Consulting • Headquarters, Belgrade, Serbia
+        PUEPR • Headquarters, Belgrade, Serbia
       </p>
 
     </div>
@@ -119,7 +120,7 @@ export async function POST(req: Request) {
 
     // ---- SEND CONFIRMATION EMAIL TO SUBSCRIBER ----
     await transporter.sendMail({
-      from: `"PUEPR Consulting" <${process.env.EMAIL_USER}>`,
+      from: `"PUEPR" <${process.env.EMAIL_USER}>`,
       to: email,
       subject: "Welcome to PUEPR Newsletter!",
       html: getEmailTemplate(false),
@@ -127,8 +128,8 @@ export async function POST(req: Request) {
 
     // ---- SEND INTERNAL NOTIFICATION EMAIL ----
     await transporter.sendMail({
-      from: process.env.INTERNAL_EMAIL,
-      to: process.env.INTERNAL_EMAIL,
+      from: `"PUEPR" <${process.env.EMAIL_USER}>`,
+      to: `${process.env.EMAIL_USER},${process.env.INTERNAL_EMAIL}`,
       subject: "New Newsletter Subscriber",
       html: getEmailTemplate(true),
     });

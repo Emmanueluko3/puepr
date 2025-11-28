@@ -24,15 +24,16 @@ export async function POST(req: Request) {
 
     <!-- Top Blue Header -->
     <div style="background:#0009a8; padding:20px;">
-      <img src="https://www.puepr.com/logos/logo-light.png" alt="PUEPR Logo" style="height:40px;">
+      <img src="https://www.puepr.com/logos/logo-light.png" alt="PUEPR Logo" style="height:40px; display:block;">
     </div>
 
-    <!-- Image -->
+    <!-- Image - Responsive for Mobile -->
     <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1470" 
-         style="width:100%; height:auto; display:block;" />
+         style="width:100%; height:auto; display:block; max-width:700px; object-fit:cover;" 
+         alt="Contact Header" />
 
     <!-- Content Wrapper -->
-    <div style="padding:40px;">
+    <div style="padding:40px; box-sizing:border-box;">
 
       <h2 style="text-align:center; font-size:24px; font-weight:bold; margin-bottom:20px;">
         ${
@@ -48,7 +49,7 @@ export async function POST(req: Request) {
         ${
           isInternal
             ? "A new contact form submission has been received on your website."
-            : `Thank you for reaching out to PUEPR Consulting regarding 
+            : `Thank you for reaching out to PUEPR regarding 
             <strong>${services}</strong>. We have successfully received your inquiry and appreciate your interest in our services.`
         }
       </p>
@@ -88,26 +89,26 @@ export async function POST(req: Request) {
           : ""
       }
 
-      <p>Best regards,<br />PUEPR Consulting Team</p>
+      <p>Best regards,<br />PUEPR Team</p>
     </div>
 
     <!-- Social Footer -->
     <div style="text-align:center; padding-bottom:20px;">
       <a href="https://facebook.com/pueprconsulting" style="margin:0 6px;">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="24">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="24" alt="Facebook">
       </a>
       <a href="https://x.com/pueprconsulting" style="margin:0 6px;">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" width="24">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" width="24" alt="X">
       </a>
       <a href="https://linkedin.com/company/puepr" style="margin:0 6px;">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="24">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="24" alt="LinkedIn">
       </a>
       <a href="https://instagram.com/pueprconsulting" style="margin:0 6px;">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" width="24">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" width="24" alt="Instagram">
       </a>
 
       <p style="font-size:13px; color:#777; margin-top:15px;">
-        PUEPR Consulting • Headquarters, Belgrade, Serbia
+        PUEPR • Headquarters, Belgrade, Serbia
       </p>
 
     </div>
@@ -118,16 +119,16 @@ export async function POST(req: Request) {
 
     // ---- SEND CLIENT EMAIL ----
     await transporter.sendMail({
-      from: `"PUEPR Consulting" <${process.env.EMAIL_USER}>`,
+      from: `"PUEPR" <${process.env.EMAIL_USER}>`,
       to: email,
       subject: "Thank you for contacting PUEPR!",
       html: getEmailTemplate(false),
     });
 
-    // ---- SEND INTERNAL EMAIL ----
+    // ---- SEND INTERNAL EMAIL TO BOTH ADDRESSES ----
     await transporter.sendMail({
-      from: process.env.INTERNAL_EMAIL,
-      to: process.env.INTERNAL_EMAIL, // Add this to your .env
+      from: `"PUEPR" <${process.env.EMAIL_USER}>`,
+      to: `${process.env.EMAIL_USER},${process.env.INTERNAL_EMAIL}`,
       subject: "New Contact Form Submission",
       html: getEmailTemplate(true),
     });
