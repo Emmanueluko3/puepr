@@ -8,16 +8,16 @@ export async function POST(req: Request) {
 
     // ✅ FIXED TRANSPORTER FOR CPANEL
     const transporter = nodemailer.createTransport({
-      host: "mail.puepr.com", // IMPORTANT
+      host: "mail.puepr.com",
       port: 465,
       secure: true,
       auth: {
-        user: process.env.EMAIL_USER, // info@puepr.com
-        pass: process.env.EMAIL_PASS, // your real cpanel email password
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
-    // ---- EMAIL TEMPLATE (Reusable) ----
+    // ---- EMAIL TEMPLATE (UPDATED BANNER IMAGE) ----
     const getEmailTemplate = (isInternal: boolean) => `
 <div style="margin:0; padding:0; background:#f4f4f4; width:100%; font-family:Arial, sans-serif;">
   <div style="max-width:700px; margin:0 auto; background:#ffffff;">
@@ -27,10 +27,19 @@ export async function POST(req: Request) {
       <img src="https://www.puepr.com/logos/logo-light.png" alt="PUEPR Logo" style="height:40px; display:block;">
     </div>
 
-    <!-- Image - Responsive for Mobile -->
-    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1470" 
-         style="width:100%; height:auto; display:block; max-width:700px; object-fit:cover;" 
-         alt="Contact Header" />
+    <!-- FIXED RESPONSIVE IMAGE FOR iPHONE MAIL -->
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td>
+          <img
+            src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1470"
+            alt="Contact Header"
+            width="700"
+            style="display:block; width:100%; height:auto; border:0; outline:none; text-decoration:none;"
+          />
+        </td>
+      </tr>
+    </table>
 
     <!-- Content Wrapper -->
     <div style="padding:40px; box-sizing:border-box;">
@@ -125,7 +134,7 @@ export async function POST(req: Request) {
       html: getEmailTemplate(false),
     });
 
-    // ---- SEND INTERNAL EMAIL TO BOTH ADDRESSES ----
+    // ---- SEND INTERNAL EMAIL ----
     await transporter.sendMail({
       from: `"PUEPR" <${process.env.EMAIL_USER}>`,
       to: `${process.env.EMAIL_USER},${process.env.INTERNAL_EMAIL}`,

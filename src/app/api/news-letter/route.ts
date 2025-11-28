@@ -25,7 +25,6 @@ export async function POST(req: Request) {
       },
     });
 
-    // ---- EMAIL TEMPLATE (Reusable) ----
     const getEmailTemplate = (isInternal: boolean) => `
 <div style="margin:0; padding:0; background:#f4f4f4; width:100%; font-family:Arial, sans-serif;">
   <div style="max-width:700px; margin:0 auto; background:#ffffff;">
@@ -35,10 +34,19 @@ export async function POST(req: Request) {
       <img src="https://www.puepr.com/logos/logo-light.png" alt="PUEPR Logo" style="height:40px; display:block;">
     </div>
 
-    <!-- Image - Responsive for Mobile -->
-    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1470" 
-         style="width:100%; height:auto; display:block; max-width:700px; object-fit:cover;" 
-         alt="Newsletter Header" />
+    <!-- FIXED RESPONSIVE IMAGE FOR iPHONE MAIL -->
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td>
+          <img
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1470"
+            alt="Newsletter Header"
+            width="700"
+            style="display:block; width:100%; height:auto; border:0; outline:none; text-decoration:none;"
+          />
+        </td>
+      </tr>
+    </table>
 
     <!-- Content Wrapper -->
     <div style="padding:40px; box-sizing:border-box;">
