@@ -36,21 +36,21 @@ const team = [
   {
     name: "Harrison, M",
     role: "COO",
-    image: "/images/HARRISON-M.jpg",
+    image: "/images/Harrison-M.jpg",
     delay: 100,
   },
   {
-    name: "Lois G",
-    role: "Admin Assistant",
-    image: "/images/LOIS-G.JPG",
+    name: "Javeria M",
+    role: "Operations Manager",
+    image: "/images/Javeria-M.jpeg",
     delay: 200,
   },
-  {
-    name: "Blossom A",
-    role: "Lead Generation / Automation Specialist",
-    image: "/images/BLOSSOM-A.JPG",
-    delay: 300,
-  },
+  // {
+  //   name: "Dianah K.",
+  //   role: "Administrative Assistant",
+  //   image: "/images/Dianah-K.jpeg",
+  //   delay: 300,
+  // },
 ];
 
 export default function Features() {
@@ -143,7 +143,7 @@ export default function Features() {
             </div>
           </header>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {team.map(({ name, role, image, delay }) => (
               <article
                 key={name}

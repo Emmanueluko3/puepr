@@ -243,28 +243,28 @@ export default function ContactPage() {
                 {[
                   [
                     {
-                      label: "First Name",
+                      label: "First name",
                       name: "firstName",
-                      placeholder: "Enter First Name",
+                      placeholder: "Enter first name",
                     },
                     {
-                      label: "Last Name",
+                      label: "Last name",
                       name: "lastName",
-                      placeholder: "Enter Last Name",
+                      placeholder: "Enter last name",
                     },
                   ],
                   [
                     {
-                      label: "Email Address",
+                      label: "Email address",
                       name: "email",
                       type: "email",
-                      placeholder: "Enter Email Address",
+                      placeholder: "Enter email address",
                     },
                     {
-                      label: "Phone Number",
+                      label: "Phone number",
                       name: "phone",
                       type: "tel",
-                      placeholder: "Enter Phone Number",
+                      placeholder: "Enter phone number",
                     },
                   ],
                 ].map((pair, i) => (
