@@ -96,8 +96,6 @@ export default function Footer() {
     }
   };
 
-  const currentYear = new Date().getFullYear();
-
   return (
     <section
       id="footer"
@@ -309,7 +307,7 @@ export default function Footer() {
           <div className="border-t border-gray-700 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div>
               <p className="text-gray-400 text-sm mb-1">
-                © {currentYear} PUEPR. All Rights Reserved.
+                © 2025 PUEPR. All Rights Reserved.
               </p>
               <p className="text-gray-500 text-sm italic">
                 Grow smarter, Not harder
